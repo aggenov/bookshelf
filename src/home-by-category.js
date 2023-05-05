@@ -24,13 +24,10 @@ async function GetCategoryList() {
 };
 
 function renderCategoryList(data) {
-    const categoryBooksTitle = document.createElement("h2");
     
-    categoryBooksTitle.classList.add("category-books-title")
+    refs.categoryBooksTitle.textContent = data[0].list_name;
+    refs.categoryBooksTitle.classList.remove("is-hidden")
     
-    categoryBooksTitle.textContent = data[0].list_name;
-    console.log(categoryBooksTitle)
-    refs.categoryBooksList.before(categoryBooksTitle);
     const markup = data.map((book) => 
         `<li class="book-card-preview">
             <img class="book-img-preview" src="${book.book_image}" alt="${book.description}">
@@ -53,6 +50,6 @@ async function getFirstGallary() {
 };
 
 function onClick(e) {
-    refs.categoryBooksSection.innerHTML = '';
+    refs.categoryBooksList.innerHTML = '';
     getFirstGallary()
 };
