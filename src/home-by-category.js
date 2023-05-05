@@ -4,7 +4,8 @@ const BASE_URL = 'https://books-backend.p.goit.global/books/';
 const refs = {
     seeMoreBtn: document.querySelector('.see-more-btn'),
     categoryBooksList: document.querySelector('.category-books-list'),
-    categoryBooksTitle: document.querySelector('.category-books-title')
+    categoryBooksTitle: document.querySelector('.category-books-title'),
+    categoryBooksSection: document.querySelector('.category-books-sec')
 }
 
 refs.seeMoreBtn.addEventListener('click', onClick)
@@ -52,6 +53,6 @@ async function getFirstGallary() {
 };
 
 function onClick(e) {
-    refs.categoryBooksList.innerHTML = '';
+    refs.categoryBooksSection.innerHTML = '';
     getFirstGallary()
 };
