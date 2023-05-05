@@ -4,6 +4,7 @@ import { bookshelfMarkup } from './MarkupGenerators/Bookshelf';
 import { getData } from './request';
 
 const sectionRef = document.querySelector('.bestsellers-container');
+let bookshelfsRef = null; // will be updated after render
 
 export async function renderPopularBooks(node) {
   getData('/books/top-books').then(data => {
@@ -21,4 +22,9 @@ export async function renderPopularBooks(node) {
 // render section
 renderPopularBooks(sectionRef);
 
-window.addEventListener('resize', throttle(setAmountOfDisplayedBooks, 1000));
+window.addEventListener(
+  'resize',
+  throttle(() => {
+    setAmountOfDisplayedBooks(bookshelfsRef);
+  }, 1000)
+);
