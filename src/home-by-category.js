@@ -27,6 +27,7 @@ function renderCategoryList(data) {
     
     refs.categoryBooksTitle.textContent = data[0].list_name;
     refs.categoryBooksTitle.classList.remove("is-hidden")
+    refs.categoryBooksList.classList.remove("is-hidden")
     
     const markup = data.map((book) => 
         `<li class="book-card-preview">

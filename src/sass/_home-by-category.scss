@@ -1,21 +1,20 @@
-.container {
-    margin-left: auto;
-    margin-right: auto;
-    padding-right: 20px;
+.bestsellers-container {
+    margin: 0 auto;
+    max-width: 375px;
+
     padding-left: 20px;
-}
+    padding-right: 20px;
 
-@media screen and (min-width: 768px) {
-    .container {
-        padding-right: 32px;
+    @media screen and (min-width: 768px) {
+        max-width: 768px; // 704?
         padding-left: 32px;
+        padding-right: 32px;
     }
-}
 
-@media screen and (min-width: 1440px) {
-    .container {
+    @media screen and (min-width: 1440px) {
+        max-width: 1060px; // 996?
+        padding-left: 40px;
         padding-right: 24px;
-        padding-left: 24px;
     }
 }
 
@@ -35,9 +34,15 @@
     font-weight: 700;
     font-size: 32px;
     line-height: 1.19;
-    letter-spacing: -0.04em;
-    color: var(--main-color);
+
     margin-bottom: 40px;
+
+    @media screen and (min-width: 768px) {
+        font-size: 48px;
+        line-height: 1.08;
+    }
+
+    @media screen and (min-width: 1440px) {}
 }
 
 .book-card-preview {
