@@ -6,6 +6,6 @@ export function bookshelfMarkup({ list_name, books }) {
     <div class="bookshelf">
       ${books.map(bookMarkup).join(' ')}
     </div>
-    <button class="see-more-btn">SEE MORE</button>
+    <button class="see-more-btn" data-category="${list_name}">SEE MORE</button>
   `;
 }
