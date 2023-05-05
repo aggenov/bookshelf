@@ -1,1 +1,1 @@
-import './category-books'
+import './home-by-category'

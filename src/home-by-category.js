@@ -29,12 +29,12 @@ function renderCategoryList(data) {
     
     categoryBooksTitle.textContent = data[0].list_name;
     console.log(categoryBooksTitle)
-    refs.categoryBooksList.prepend(categoryBooksTitle);
+    refs.categoryBooksList.before(categoryBooksTitle);
     const markup = data.map((book) => 
-        `<li>
-            <img src="${book.book_image}" alt="${book.description}">
-            <h3>${book.title}</h3>
-            <p>${book.author}</p>
+        `<li class="book-card-preview">
+            <img class="book-img-preview" src="${book.book_image}" alt="${book.description}">
+            <h3 class="book-title-preview">${book.title}</h3>
+            <p class="book-name-preview">${book.author}</p>
         </li>`
     ).join('');
 
@@ -54,4 +54,4 @@ async function getFirstGallary() {
 function onClick(e) {
     refs.categoryBooksList.innerHTML = '';
     getFirstGallary()
-}
+};
