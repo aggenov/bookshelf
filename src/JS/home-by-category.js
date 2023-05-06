@@ -5,7 +5,7 @@ const refs = {
     seeMoreBtn: document.querySelector('.see-more-btn'),
     categoryBooksList: document.querySelector('.category-books-list'),
     categoryBooksTitle: document.querySelector('.category-books-title'),
-    categoryBooksSection: document.querySelector('.category-books-sec')
+    categoryBooksField: document.querySelector('.category-books-field')
 }
 
 refs.seeMoreBtn.addEventListener('click', onClick)
@@ -25,14 +25,18 @@ async function GetCategoryList() {
 
 function renderCategoryList(data) {
     
+    refs.categoryBooksField.classList.remove("is-hidden")
     refs.categoryBooksTitle.textContent = data[0].list_name;
-    refs.categoryBooksTitle.classList.remove("is-hidden")
     
     const markup = data.map((book) => 
         `<li class="book-card-preview">
+        <div class="book-thumb">
             <img class="book-img-preview" src="${book.book_image}" alt="${book.description}">
+            <p class="focus-book-card">quick view</p>
+        </div>
             <h3 class="book-title-preview">${book.title}</h3>
             <p class="book-name-preview">${book.author}</p>
+        
         </li>`
     ).join('');
 
