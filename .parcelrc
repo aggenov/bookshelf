@@ -3,7 +3,7 @@
     "@parcel/config-default"
   ],
   "reporters": [
-    "..."
+    "...",
     "parcel-reporter-clean-dist"
   ]
 }

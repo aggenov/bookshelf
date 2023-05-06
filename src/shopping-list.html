@@ -14,6 +14,28 @@
     <script type="module" src="./index.js"></script>
   </head>
   <body>
+    <main class="main">
+      <section class="shopping-list">
+          <h1 class="shopping-text">
+              Shopping <span class="violet-color">List</span>
+          </h1>
+          <div class="empty-list">
+              <p class="shopping-empty-text">
+                  This page is empty, add some books and proceed to order.
+                </p>
+                <img
+          class="shopping-empty-img"
+          srcset="
+            ./images/empty.png 265w,
+            ./images/empty@2x.png 322w,
+          "
+          sizes="(min-width: 768px) 322px,(max-width: 767px) 265px, 100vw"
+          
+          alt="books"/>
+          </div>
+      </section>
+  </main>
+
     <!-- Header -->
     <include src="./partials/header.html"></include>
 
