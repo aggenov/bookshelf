@@ -30,9 +30,13 @@ function renderCategoryList(data) {
     
     const markup = data.map((book) => 
         `<li class="book-card-preview">
+        <div class="book-thumb">
             <img class="book-img-preview" src="${book.book_image}" alt="${book.description}">
+            <p class="focus-book-card">quick view</p>
+        </div>
             <h3 class="book-title-preview">${book.title}</h3>
             <p class="book-name-preview">${book.author}</p>
+        
         </li>`
     ).join('');
 
