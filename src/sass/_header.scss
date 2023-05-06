@@ -1,0 +1,163 @@
+.header {
+    background: #FFFFFF;
+    border: 1.5px solid #111111;
+    border-radius: 0px 0px 8px 8px;
+    min-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a {
+    height: 28px;
+}
+
+.container {
+    height: 68px;
+    min-width: 320px;
+    padding: 0 32px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-nav-list li {
+    display: inline-block;
+}
+
+.header-burger {
+    width: 28px;
+    height: 28px;
+    border-radius: 0;
+    border-color: transparent;
+}
+
+.theme-switch input[type="checkbox"] {
+    display: none;
+}
+
+.theme-switch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.switch {
+    margin-right: 14px;
+    padding-top: 10px;
+    
+}
+
+.theme-switch label.switch::before {
+    content: "";
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    background-image: url("../images/Switcher-off.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.button-home {
+    width: 72px;
+    height: 34px;
+    background-color: transparent;
+    border: transparent;
+}
+
+
+.button-home:hover,
+.button-home:focus {
+    background-color: #EAC645;
+    outline: none;
+    border-radius: 36px;
+}
+
+.button-shop {
+    width: 156px;
+    height: 34px;
+    background-color: transparent;
+    border: transparent;
+    padding: 7px 16px;
+}
+
+.button-shop:hover,
+.button-shop:focus {
+    background-color: #EAC645;
+    outline: none;
+    border-radius: 36px;
+
+}
+
+@media screen and (max-width: 768px) {
+    .header-nav {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+
+.header-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .nav {
+        height: 72px;
+        justify-content: normal;
+        align-items: center;
+    }
+
+    .header-nav-icon {
+        width: 20px;
+        height: 20px;
+        position: fixed;
+        top: 22px
+    }
+
+    .header-nav-link {
+        font-weight: 500;
+        line-height: 1.28;
+        text-transform: uppercase;
+        color: #111111;
+    }
+
+    .header-burger {
+        display: none;
+    }
+
+    .header-logo {
+        margin-right: 40px;
+    }
+
+}
+
+@media screen and (min-width: 1200px) {
+    .theme-switch label.switch::before {
+    display: inline-block;
+    content: "";
+    width: 40px;
+    height: 24px;
+    background-image: url("../images/switcher-off@2x.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.header-logo {
+    margin-right: 76px;
+}
+
+}
+
