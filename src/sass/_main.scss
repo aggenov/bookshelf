@@ -16,7 +16,7 @@ p {
 }
 
 body {
-    background-color: var(--background-main-color);
+    background-color: var(--background-light-color);
     color: var(--main-color);
 
     font-family: 'DM Sans', sans-serif;
@@ -50,13 +50,16 @@ img {
 button {
     border-color: var(--background-main-color);
     cursor: pointer;
-    border-radius: 40px
+    border-radius: 40px;
+    font-weight: 700;
 }
 button:hover {
     background-color: var(--background-main-color);
 }
 button:focus {
     box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.15);
+    background-color: var(--background-main-color);
+    border-color: 2px solid var(--background-main-color);
     color: #ffffff;
 }
 button:disabled {
