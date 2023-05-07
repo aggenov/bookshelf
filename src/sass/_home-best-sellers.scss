@@ -217,3 +217,22 @@
     display: none;
   }
 }
+
+.bookshelf {
+  display: flex;
+  flex-wrap: wrap;
+
+  margin-bottom: 8px;
+
+  row-gap: 40px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 20px;
+    column-gap: 25px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    margin-bottom: 32px;
+    column-gap: 24px;
+  }
+}
