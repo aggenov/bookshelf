@@ -3,7 +3,7 @@ import { setAmountOfDisplayedBooks } from './setAmountOfDisplayedBooks';
 import { bookshelfMarkup } from './MarkupGenerators/Bookshelf';
 import { getData } from './request';
 
-const sectionRef = document.querySelector('.bestsellers-container');
+export const sectionRef = document.querySelector('.home-categories');
 let bookshelfsRef = null; // will be updated after render
 
 export async function renderPopularBooks(node) {

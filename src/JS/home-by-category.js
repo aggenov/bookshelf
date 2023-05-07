@@ -1,14 +1,18 @@
 import axios from 'axios';
+import { bookMarkup } from "../JS/BestSellers/MarkupGenerators/Book";
 const BASE_URL = 'https://books-backend.p.goit.global/books/';
 
-const refs = {
-    seeMoreBtn: document.querySelector('.see-more-btn'),
-    categoryBooksList: document.querySelector('.category-books-list'),
-    categoryBooksTitle: document.querySelector('.category-books-title'),
-    categoryBooksField: document.querySelector('.category-books-field')
-}
+const sectionRef = document.querySelector('.by-category-container');
 
-refs.seeMoreBtn.addEventListener('click', onClick)
+document.addEventListener('click', onClickSeeMoreBtn);
+
+function onClickSeeMoreBtn(e) {
+    if (e.target.matches('.see-more-btn[data-category]')) {
+        const categoryBook = e.target.getAttribute('data-category');
+        sectionRef.innerHTML = '';
+        renderCategoryList(categoryBook);
+    };
+}
 
 async function GetBooksByCategory(category) {
     const resp = await axios.get(`${BASE_URL}category?category=${category}`);
@@ -16,44 +20,30 @@ async function GetBooksByCategory(category) {
     return resp.data;
 };
 
-async function GetCategoryList() {
-    const resp = await axios.get(`${BASE_URL}category-list`);
-    console.log(resp.data[0].list_name);
-    
-    return GetBooksByCategory(resp.data[0].list_name)
+function getBooks(data, category) {
+    return `
+        <h3 class="best-sellers-header">${colorizeMarkup(category)}</h3>
+        <ul class="bookshelf">
+            ${data.map(bookMarkup).join('')}
+        </ul>`;
 };
 
-function renderCategoryList(data) {
-    
-    refs.categoryBooksField.classList.remove("is-hidden")
-    refs.categoryBooksTitle.textContent = data[0].list_name;
-    
-    const markup = data.map((book) => 
-        `<li class="book-card-preview">
-        <div class="book-thumb">
-            <img class="book-img-preview" src="${book.book_image}" alt="${book.description}">
-            <p class="focus-book-card">quick view</p>
-        </div>
-            <h3 class="book-title-preview">${book.title}</h3>
-            <p class="book-name-preview">${book.author}</p>
-        
-        </li>`
-    ).join('');
-
-    refs.categoryBooksList.insertAdjacentHTML('beforeend', markup);
-};
-
-async function getFirstGallary() {
+async function renderCategoryList(category) {
     try {
-        const data = await GetCategoryList();
-        console.log(data)
-        renderCategoryList(data)
+        const data = await GetBooksByCategory(category);
+        const markup = getBooks(data, category)
+        sectionRef.insertAdjacentHTML('beforeend', markup);
     } catch (error) {
         console.log(error)
     };
 };
 
-function onClick(e) {
-    refs.categoryBooksList.innerHTML = '';
-    getFirstGallary()
-};
+function colorizeMarkup(textContent) {
+  const wordArr = textContent.split(' ');
+  const midpoint = Math.floor(wordArr.length / 2);
+
+  const firstHalf = wordArr.slice(0, midpoint).join(' ');
+  const secondHalf = wordArr.slice(midpoint).join(' ');
+
+  return `${firstHalf} <span>${secondHalf}</span>`;
+}

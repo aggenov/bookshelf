@@ -2,7 +2,7 @@
   padding-top: 40px;
   padding-bottom: 40px;
 
-  background-color: #fff;
+  background-color: var(--background-light-color);
   @media screen and (min-width: 1440px) {
     max-width: 1060px; // 996?
     margin-left: auto;
@@ -72,7 +72,6 @@
 
 .book-item {
   position: relative;
-  background-color: #fff;
 
   width: 335px;
 
@@ -112,6 +111,8 @@
   &::before {
     content: 'QUICK VIEW';
     color: var(--main-color);
+    font-weight: 500;
+
     position: absolute;
 
     display: flex;
@@ -150,8 +151,12 @@
 }
 
 .book-item-title {
-  font-weight: 700;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
   font-size: 16px;
+  font-weight: 700;
   line-height: 1.12;
 
   margin-top: 14px;
@@ -172,6 +177,8 @@
   flex-wrap: wrap;
 
   margin-bottom: 8px;
+
+  gap: 40px;
 
   @media screen and (min-width: 768px) {
     margin-bottom: 20px;
@@ -200,13 +207,13 @@
 }
 
 .bookshelf-tablet {
-  div:nth-child(n + 4) {
+  li:nth-child(n + 4) {
     display: none;
   }
 }
 
 .bookshelf-mobile {
-  div:nth-child(n + 2) {
+  li:nth-child(n + 2) {
     display: none;
   }
 }
