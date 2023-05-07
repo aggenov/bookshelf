@@ -1,5 +1,5 @@
 // Робота з додаванням і видаленням
-const saveStorage = (key, value) => {
+export const saveStorage = (key, value) => {
   try {
     const serializedState = JSON.stringify(value);
     localStorage.setItem(key, serializedState);
@@ -8,7 +8,7 @@ const saveStorage = (key, value) => {
   }
 };
 
-const loadStorage = key => {
+export const loadStorage = key => {
   try {
     const serializedState = localStorage.getItem(key);
     return serializedState === null ? undefined : JSON.parse(serializedState);
@@ -16,16 +16,10 @@ const loadStorage = key => {
     console.error('Get state error: ', error.message);
   }
 };
-const removeStorage = key => {
+export const removeStorage = key => {
   try {
     localStorage.removeItem(key);
   } catch (error) {
     console.error('Remove state error: ', error.message);
   }
-};
-
-export default {
-  saveStorage,
-  loadStorage,
-  removeStorage,
 };
