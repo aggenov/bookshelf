@@ -133,9 +133,9 @@ a {
         color: #111111;
     }
 
-    .header-burger {
-        display: none;
-    }
+    // .header-burger {
+    //     display: none;
+    // }
 
     .header-logo {
         margin-right: 40px;
@@ -161,3 +161,10 @@ a {
 
 }
 
+.header-burger-icon {
+    width: 32px;
+    height: 32px;
+    stroke: var(--main-color);
+}
+.header-burger-icon:hover {
+    stroke: var(--background-main-color);}
