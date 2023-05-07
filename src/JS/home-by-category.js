@@ -3,13 +3,15 @@ import { sectionRef } from '../JS/BestSellers/bestSellers';
 import { bookMarkup } from "../JS/BestSellers/MarkupGenerators/Book";
 const BASE_URL = 'https://books-backend.p.goit.global/books/';
 
-document.addEventListener('click', (e) => {
+document.addEventListener('click', onClickSeeMoreBtn);
+
+function onClickSeeMoreBtn(e) {
     if (e.target.matches('.see-more-btn[data-category]')) {
         const categoryBook = e.target.getAttribute('data-category');
         sectionRef.innerHTML = '';
         renderCategoryList(categoryBook);
     };
-});
+}
 
 async function GetBooksByCategory(category) {
     const resp = await axios.get(`${BASE_URL}category?category=${category}`);
