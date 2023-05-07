@@ -1,6 +1,6 @@
 .btn-up {
-    width: 34px;
-    height: 34px;
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
     box-shadow: 0px 5.26027px 19.726px rgba(212, 20, 67, 0.1);
 
@@ -18,19 +18,18 @@ display: flex;
     border-radius: 50%;
     background-color: var(--btn-default-color);
     fill: var(--background-main-color);
-    width: 34px;
-    height: 34px;
+    width: 64px;
+    height: 64px;
     opacity: 0.5;
 }
 .scroll-icon-link:hover,
 .scroll-icon-link:focus {
-    background-color: var(--btn-default-color);
-    fill: var(--background-main-color);
+    // fill: var(--background-main-color);
     opacity: 1;
 }
 
 
 .arow-up {
     align-items: center;
-    color: var(--background-main-color);
+    // color: var(--background-main-color);
 }
