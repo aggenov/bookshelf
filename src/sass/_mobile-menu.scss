@@ -34,12 +34,11 @@
 
 .mobile-nav-list {
     display: flex;
-    justify-content: center;
-    // align-items: center;
     height: 100%;
     position: absolute;
+    flex-direction: column;
     top: 25%;
-    right: 25%;
+    left: 25%;
 }
 
 .header-nav-link-mob {
@@ -53,8 +52,6 @@
     width: 20px;
     height: 20px;
     position: absolute;
-    top: 28px;
-    right: 24px;
     fill: #FFFFFF;
 }
 
