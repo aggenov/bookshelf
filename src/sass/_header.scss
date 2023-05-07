@@ -44,9 +44,12 @@ a {
     height: 28px;
     border-radius: 0;
     border-color: transparent;
-    background: transparent
+    background-color: transparent;
 }
-
+.header-burger:hover {
+    border-color: transparent;
+    background-color: transparent;
+}
 .theme-switch input[type="checkbox"] {
     display: none;
 }
@@ -80,8 +83,7 @@ a {
     border: transparent;
     padding: 8px 16px;
 }
-.header-burger-icon:hover {
-    stroke: var(--background-main-color);}
+
 
 
 // .header-home {
@@ -115,11 +117,16 @@ a {
 
 // }
 
-// // .header-burger-icon {
-// //     width: 28px;
-// //     height: 28px;
-// //     fill: #111111;
-// // }
+
+
+.header-burger-icon {
+    width: 28px;
+    height: 28px;
+    stroke: var(--main-color);
+}
+.header-burger-icon:hover {
+    stroke: var(--background-main-color);
+}
 
 @media screen and (max-width: 768px) {
     .header-nav {
