@@ -3,11 +3,19 @@ const LOCAL_KEY = "LOCAL_KEY";
 let InfoAboutBook = {};
 
 const refs = {
+  backdropForModal: document.querySelector(".backdrop-modal"),
   bookDescription: document.querySelector(".modal"),
-
+  closeModalWindow: document.querySelector('.close-modal-single-book'),
 }
 
+refs.closeModalWindow.addEventListener("click", onCloseWindow);
 
+function onCloseWindow(event){
+  console.log(event.target) 
+
+   refs.backdropForModal.classList.add('is-hidden')
+ 
+}
 // const allBooks = async () => {
 //   const response = await fetch("https://books-backend.p.goit.global/books/top-books ");
 //   const books = await response.json();
