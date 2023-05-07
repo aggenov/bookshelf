@@ -33,11 +33,18 @@ a {
     display: inline-block;
 }
 
+.header-home::after {
+    background-color: var(--background-active-color);
+    outline: none;
+    border-radius: 36px;
+}
+
 .header-burger {
     width: 28px;
     height: 28px;
     border-radius: 0;
     border-color: transparent;
+    background: transparent
 }
 
 .theme-switch input[type="checkbox"] {
@@ -52,7 +59,7 @@ a {
 
 .switch {
     margin-right: 14px;
-    padding-top: 10px;
+    padding-top: 15px;
     
 }
 
@@ -67,44 +74,49 @@ a {
     background-position: center;
 }
 
-.header-home {
-    width: 72px;
-    height: 34px;
-    background-color: transparent;
-    border: transparent;
-    padding: 8px 16px;
+.header-burger-icon {
+    stroke: var(--main-color);
 }
+.header-burger-icon:hover {
+    stroke: var(--background-main-color);}
 
 
-.header-home:hover,
-.header-home:focus {
-    background-color: var(--background-active-color);
-    outline: none;
-    border-radius: 36px;
-}
-
-.header-shop {
-    width: 156px;
-    height: 34px;
-    background-color: transparent;
-    border: transparent;
-    padding: 7px 16px;
-    display: flex;
-}
-
-.header-shop:hover,
-.header-shop:focus {
-    background-color: var(--background-active-color);
-    outline: none;
-    border-radius: 36px;
-
-}
-
-// .header-burger-icon {
-//     width: 28px;
-//     height: 28px;
-//     fill: #111111;
+// .header-home {
+//     background-color: transparent;
+//     border: transparent;
+//     padding: 8px 16px;
 // }
+
+
+// .header-home:hover,
+// .header-home:focus {
+//     background-color: var(--background-active-color);
+//     outline: none;
+//     border-radius: 36px;
+// }
+
+// .header-shop {
+//     width: 156px;
+//     height: 34px;
+//     background-color: transparent;
+//     border: transparent;
+//     padding: 7px 16px;
+//     display: flex;
+// }
+
+// .header-shop:hover,
+// .header-shop:focus {
+//     background-color: var(--background-active-color);
+//     outline: none;
+//     border-radius: 36px;
+
+// }
+
+// // .header-burger-icon {
+// //     width: 28px;
+// //     height: 28px;
+// //     fill: #111111;
+// // }
 
 @media screen and (max-width: 768px) {
     .header-nav {
@@ -117,10 +129,11 @@ a {
 
 
 .header-nav {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
     }
 
     .nav {
@@ -133,8 +146,6 @@ a {
         width: 20px;
         height: 20px;
         position: absolute;
-        top: 5px;
-        right: 20px;
         color: var(--main-color);
     }
 
@@ -145,9 +156,9 @@ a {
         color: var(--main-color);
     }
 
-    // .header-burger {
-    //     display: none;
-    // }
+    .header-burger {
+        display: none;
+    }
 
     .header-logo {
         margin-right: 40px;
@@ -173,10 +184,3 @@ a {
 
 }
 
-.header-burger-icon {
-    width: 32px;
-    height: 32px;
-    stroke: var(--main-color);
-}
-.header-burger-icon:hover {
-    stroke: var(--background-main-color);}
