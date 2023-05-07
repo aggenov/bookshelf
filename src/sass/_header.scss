@@ -74,8 +74,11 @@ a {
     background-position: center;
 }
 
-.header-burger-icon {
-    stroke: var(--main-color);
+.header-home {
+    height: 34px;
+    background-color: transparent;
+    border: transparent;
+    padding: 8px 16px;
 }
 .header-burger-icon:hover {
     stroke: var(--background-main-color);}
