@@ -1,6 +1,6 @@
 .header {
     background: #FFFFFF;
-    border: 1.5px solid #111111;
+    border: 1.5px solid var(--main-color);
     border-radius: 0px 0px 8px 8px;
     min-width: 320px;
     margin-left: auto;
@@ -20,6 +20,7 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 }
 
 .nav {
@@ -66,41 +67,50 @@ a {
     background-position: center;
 }
 
-.button-home {
+.header-home {
     width: 72px;
     height: 34px;
     background-color: transparent;
     border: transparent;
+    padding: 8px 16px;
 }
 
 
-.button-home:hover,
-.button-home:focus {
-    background-color: #EAC645;
+.header-home:hover,
+.header-home:focus {
+    background-color: var(--background-active-color);
     outline: none;
     border-radius: 36px;
 }
 
-.button-shop {
+.header-shop {
     width: 156px;
     height: 34px;
     background-color: transparent;
     border: transparent;
     padding: 7px 16px;
+    display: flex;
 }
 
-.button-shop:hover,
-.button-shop:focus {
-    background-color: #EAC645;
+.header-shop:hover,
+.header-shop:focus {
+    background-color: var(--background-active-color);
     outline: none;
     border-radius: 36px;
 
 }
 
+// .header-burger-icon {
+//     width: 28px;
+//     height: 28px;
+//     fill: #111111;
+// }
+
 @media screen and (max-width: 768px) {
     .header-nav {
         display: none;
     }
+
 }
 
 @media screen and (min-width: 768px) {
@@ -122,20 +132,22 @@ a {
     .header-nav-icon {
         width: 20px;
         height: 20px;
-        position: fixed;
-        top: 22px
+        position: absolute;
+        top: 5px;
+        right: 20px;
+        color: var(--main-color);
     }
 
     .header-nav-link {
         font-weight: 500;
         line-height: 1.28;
         text-transform: uppercase;
-        color: #111111;
+        color: var(--main-color);
     }
 
-    .header-burger {
-        display: none;
-    }
+    // .header-burger {
+    //     display: none;
+    // }
 
     .header-logo {
         margin-right: 40px;
@@ -161,3 +173,10 @@ a {
 
 }
 
+.header-burger-icon {
+    width: 32px;
+    height: 32px;
+    stroke: var(--main-color);
+}
+.header-burger-icon:hover {
+    stroke: var(--background-main-color);}

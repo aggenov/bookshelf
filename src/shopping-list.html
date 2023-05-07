@@ -15,50 +15,30 @@
     <script type="module" src="./index.js"></script>
   </head>
   <body>
-
     <!-- Header -->
     <include src="./partials/header.html"></include>
 
-    
 
-
-
-    <main class="main container-shopping-list">
-      <section class="shopping-list__page ">
-          <h1 class="shopping-main__title">
-              Shopping <span class="violet-color">List</span>
-          </h1>
-          <div class="empty-list visualy-hiden">
-              <p class="shopping-empty-text">
-                  This page is empty, add some books and proceed to order.
-                </p>
-                <img
-          class="shopping-empty-img"
-          srcset="
-            ./images/empty.png 265w,
-            ./images/empty@2x.png 322w
-          "
-          sizes="(min-width: 768px) 322px,(max-width: 767px) 265px, 100vw"
-          
-          alt="books"
+    <main class="main">
+      <section class="shopping-list-page">
+        <h1 class="shopping-text">
+          Shopping <span class="violet-color">List</span>
+        </h1>
+        <div class="empty-list visualy-hiden">
+          <p class="shopping-empty-text">
+            This page is empty, add some books and proceed to order.
+          </p>
+          <img
+            class="shopping-empty-img"
+            srcset="./images/empty.png 265w, ./images/empty@2x.png 322w"
+            sizes="(min-width: 768px) 322px,(max-width: 767px) 265px, 100vw"
+            alt="books"
           />
-          </div>
-
-          <ul class="shopping-main-list-js">
-
-          </ul>
+        </div>
 
 
-
-
+        <ul class="shopping-main-list-js"></ul>
       </section>
-      
-  </main>
-
-    <!-- Footer -->
-    <include src="./partials/footer.html"></include>
-
-
-
+    </main>
   </body>
 </html>
