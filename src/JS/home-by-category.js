@@ -7,43 +7,43 @@ export const sectionRef = document.querySelector('.by-category-container');
 document.addEventListener('click', onClickSeeMoreBtn);
 
 function onClickSeeMoreBtn(e) {
-    if (e.target.matches('.see-more-btn[data-category]')) {
-        const categoryBook = e.target.getAttribute('data-category');
-        sectionRef.innerHTML = '';
+  if (e.target.matches('.see-more-btn[data-category]')) {
+    const categoryBook = e.target.getAttribute('data-category');
+    sectionRef.innerHTML = '';
 
-        renderCategoryList(categoryBook, sectionRef);
-    };
+    renderCategoryList(categoryBook, sectionRef);
+  };
 }
 
 async function getBooksByCategory(category) {
-    const resp = await axios.get(`${BASE_URL}category?category=${category}`);
-    return resp.data;
+  const resp = await axios.get(`${BASE_URL}category?category=${category}`);
+  return resp.data;
 };
 
 function getBooks(data, category) {
-    return `
-        <h3 class="best-sellers-header">${colorizeMarkup(category)}</h3>
-        <ul class="bookshelf" data-category="${category}">
-            ${data.map(bookMarkup).join('')}
-        </ul>`;
+  return `
+    <h3 class="best-sellers-header">${colorizeMarkup(category)}</h3>
+    <ul class="bookshelf" data-category="${category}">
+      ${data.map(bookMarkup).join('')}
+    </ul>`;
 };
 
 export async function renderCategoryList(category, node) {
-    try {
-        const data = await getBooksByCategory(category);
-        const markup = getBooks(data, category);
-        node.insertAdjacentHTML('beforeend', markup); 
-    } catch (error) {
-        console.log(error);
-    };
+  try {
+    const data = await getBooksByCategory(category);
+    const markup = getBooks(data, category);
+    node.insertAdjacentHTML('beforeend', markup); 
+  } catch (error) {
+      console.log(error);
+  };
 };
 
 function colorizeMarkup(textContent) {
-    const wordArr = textContent.split(' ');
-    const midpoint = Math.floor(wordArr.length / 2);
+  const wordArr = textContent.split(' ');
+  const midpoint = Math.floor(wordArr.length / 2);
 
-    const firstHalf = wordArr.slice(0, midpoint).join(' ');
-    const secondHalf = wordArr.slice(midpoint).join(' ');
+  const firstHalf = wordArr.slice(0, midpoint).join(' ');
+  const secondHalf = wordArr.slice(midpoint).join(' ');
 
-    return `${firstHalf} <span>${secondHalf}</span>`;
+  return `${firstHalf} <span>${secondHalf}</span>`;
 };
