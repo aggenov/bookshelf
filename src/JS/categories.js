@@ -8,7 +8,7 @@ export function onClickCategoryName(e) {
     if (e.target.matches('.category-name[data-category]')) {
         const categoryBook = e.target.getAttribute('data-category');
         sectionRef.innerHTML = '';
-        
+
         renderCategoryList(categoryBook, sectionRef);
         isDisableCategoryItem();
         isActiveCategoryItem(categoryBook);
@@ -20,7 +20,7 @@ function isActiveCategoryItem(category) {
     categoryItem.classList.add("category-is-active")
 };
 
-async function isDisableCategoryItem() {
+function isDisableCategoryItem() {
     const activeCategoryItem = document.querySelector('.category-is-active');
     if (activeCategoryItem) {
         activeCategoryItem.classList.remove("category-is-active");
