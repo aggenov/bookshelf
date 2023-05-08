@@ -13,13 +13,8 @@
   margin: 0 auto;
   max-width: 375px;
 
-  padding-left: 20px;
-  padding-right: 20px;
-
   @media screen and (min-width: 768px) {
     max-width: 768px; // 704?
-    padding-left: 32px;
-    padding-right: 32px;
   }
 
   @media screen and (min-width: 1440px) {
@@ -81,6 +76,36 @@
 
   @media screen and (min-width: 1440px) {
     width: 180px;
+  }
+
+  animation: myAnim 1.5s ease 0s 1 normal forwards;
+
+  @keyframes myAnim {
+    0% {
+      animation-timing-function: ease-out;
+      transform: scale(1);
+      transform-origin: center center;
+    }
+
+    10% {
+      animation-timing-function: ease-in;
+      transform: scale(0.91);
+    }
+
+    17% {
+      animation-timing-function: ease-out;
+      transform: scale(0.98);
+    }
+
+    33% {
+      animation-timing-function: ease-in;
+      transform: scale(0.87);
+    }
+
+    45% {
+      animation-timing-function: ease-out;
+      transform: scale(1);
+    }
   }
 
   // щоб працювало делегування
