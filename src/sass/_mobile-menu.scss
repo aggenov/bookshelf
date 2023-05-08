@@ -5,7 +5,7 @@
     top: 0;
     left: 0;
     z-index: 1000;
-    background: linear-gradient(to bottom, #4F2EE8, #FFFFFF);
+    background: linear-gradient(to bottom, var(--background-main-color), #FFFFFF);
     display: none;
 }
 
@@ -65,7 +65,8 @@
     width: 20px;
     height: 20px;
     // position: absolute;
-    fill: #FFFFFF;
+    stroke: #FFFFFF;
+    fill:#FFFFFF;
 }
 
 
