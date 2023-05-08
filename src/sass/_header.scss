@@ -87,7 +87,21 @@ display: inline-block;
 }
 
 
+.active {
+    width: 72px;
+    height: 34px;
+    background: var(--background-active-color);
+    border-radius: 36px;
+    font-weight: 700;
+}
 
+.active-shop {
+    width: 156px;
+    height: 34px;
+    background: var(--background-active-color);
+    border-radius: 36px;
+    font-weight: 700;
+}
 // .header-home {
 //     background-color: transparent;
 //     border: transparent;
