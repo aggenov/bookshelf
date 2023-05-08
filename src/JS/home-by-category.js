@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { bookMarkup } from "../JS/BestSellers/MarkupGenerators/Book";
-const BASE_URL = 'https://books-backend.p.goit.global/books/';
+export const BASE_URL = 'https://books-backend.p.goit.global/books/';
 
 const sectionRef = document.querySelector('.by-category-container');
 
@@ -16,7 +16,7 @@ function onClickSeeMoreBtn(e) {
 
 async function GetBooksByCategory(category) {
     const resp = await axios.get(`${BASE_URL}category?category=${category}`);
-    console.log(resp.data);
+    // console.log(resp.data);
     return resp.data;
 };
 
