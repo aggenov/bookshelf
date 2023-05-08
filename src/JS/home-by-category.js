@@ -9,8 +9,8 @@ document.addEventListener('click', onClickSeeMoreBtn);
 function onClickSeeMoreBtn(e) {
     if (e.target.matches('.see-more-btn[data-category]')) {
         const categoryBook = e.target.getAttribute('data-category');
-        console.log(categoryBook)
         sectionRef.innerHTML = '';
+
         renderCategoryList(categoryBook, sectionRef);
     };
 }
@@ -31,10 +31,10 @@ function getBooks(data, category) {
 export async function renderCategoryList(category, node) {
     try {
         const data = await getBooksByCategory(category);
-        const markup = getBooks(data, category)
+        const markup = getBooks(data, category);
         node.insertAdjacentHTML('beforeend', markup); 
     } catch (error) {
-        console.log(error)
+        console.log(error);
     };
 };
 
@@ -46,4 +46,4 @@ function colorizeMarkup(textContent) {
     const secondHalf = wordArr.slice(midpoint).join(' ');
 
     return `${firstHalf} <span>${secondHalf}</span>`;
-}
+};
