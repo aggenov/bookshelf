@@ -1,7 +1,8 @@
 const burgerMenu = document.querySelector('.modal-mobile-menu');
 const btnOpen = document.querySelector('.header-burger');
 const closeModalMenu = document.querySelector('.mobile-close-btn');
-const checkbox = document.querySelector('.switch');
+
+const checkbox = document.querySelector('#switch');
 const colorTheme = localStorage.getItem('ui-theme');
 
 (function checkColorTheme() {
@@ -9,9 +10,9 @@ const colorTheme = localStorage.getItem('ui-theme');
     localStorage.setItem('ui-theme', 'light');
   }
   if (colorTheme === 'light') {
-    checkbox.childNodes[1].checked = false;
+    checkbox.attributes.type.ownerElement.checked = false;
   } else {
-    checkbox.childNodes[1].checked = true;
+    checkbox.attributes.type.ownerElement.checked = true;
   }
 })();
 
@@ -26,7 +27,7 @@ closeModalMenu.addEventListener('click', () => {
 checkbox.addEventListener('click', toggleCheckbox);
 
 function toggleCheckbox() {
-  if (!checkbox.childNodes[1].checked) {
+  if (!checkbox.attributes.type.ownerElement.checked) {
     localStorage.setItem('ui-theme', 'light');
   } else {
     localStorage.setItem('ui-theme', 'dark');
