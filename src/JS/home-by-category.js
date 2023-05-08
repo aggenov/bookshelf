@@ -1,10 +1,25 @@
 import axios from 'axios';
 import { bookMarkup } from "../JS/BestSellers/MarkupGenerators/Book";
+import { getData } from "../JS/BestSellers/request"
 export const BASE_URL = 'https://books-backend.p.goit.global/books/';
 
 export const sectionRef = document.querySelector('.by-category-container');
 
 document.addEventListener('click', onClickSeeMoreBtn);
+
+// Додав слухача по кліку на книгу
+document.addEventListener('click', onClickBookItem);
+// Функція, яка записує у localStorage клацнуту книгу
+function onClickBookItem(e) {
+	if (e.target.matches('.book-item[data-modal-id]')) {
+		const idBook = e.target.getAttribute('data-modal-id')
+
+		getData(`/books/${idBook}`).then(data => {
+			const bookById = data
+			localStorage.setItem('data-book-by-id', JSON.stringify(bookById))
+		});
+	}
+}
 
 function onClickSeeMoreBtn(e) {
   if (e.target.matches('.see-more-btn[data-category]')) {
