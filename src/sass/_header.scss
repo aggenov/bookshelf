@@ -50,9 +50,9 @@ a {
     border-color: transparent;
     background-color: transparent;
 }
-.theme-switch input[type="checkbox"] {
-    display: none;
-}
+// .theme-switch input[type="checkbox"] {
+//     // display: none;
+// }
 
 .theme-switch {
     display: flex;
@@ -63,12 +63,15 @@ a {
 .switch {
     margin-right: 14px;
     padding-top: 15px;
-    
+    cursor: pointer;
 }
 
-.theme-switch label.switch::before {
-    content: "";
-    display: inline-block;
+
+.switch-theme-check:checked+.slider-round {
+background-image: url("../images/Switcher-on.png");
+}
+.slider-round{
+display: inline-block;
     width: 40px;
     height: 20px;
     background-image: url("../images/Switcher-off.png");
@@ -76,7 +79,6 @@ a {
     background-repeat: no-repeat;
     background-position: center;
 }
-
 .header-home {
     height: 34px;
     background-color: transparent;
@@ -177,9 +179,8 @@ a {
 }
 
 @media screen and (min-width: 1200px) {
-    .theme-switch label.switch::before {
+    .slider-round {
     display: inline-block;
-    content: "";
     width: 40px;
     height: 24px;
     background-image: url("../images/switcher-off@2x.png");
