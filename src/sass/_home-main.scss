@@ -53,18 +53,19 @@
   margin-bottom: 40px;
 }
 
-// categories scroll styles
-.categories-container::-webkit-scrollbar {
-  width: 8px;
-}
+// стили для скролла, если нужно будет ТОЛЬКО на секцию с темами
+// .categories-container::-webkit-scrollbar {
+//   width: 8px;
+// }
 
-.categories-container::-webkit-scrollbar-thumb {
-  height: 114px;
+// .categories-container::-webkit-scrollbar-thumb {
+//   height: 114px;
 
-  border-radius: 12px;
-  background-color: #e0e0e0;
-}
+//   border-radius: 12px;
+//   background-color: #e0e0e0;
+// }
 
+// болванка для секции support, позже надо удалить
 .temp-support {
   width: 335px;
   height: 352px;
