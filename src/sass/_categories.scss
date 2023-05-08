@@ -2,6 +2,8 @@
   width: 335px;
   height: 228px;
 
+  overflow: auto;
+
   @media screen and (min-width: 768px) {
     width: 337px;
     height: 472px;
@@ -12,10 +14,11 @@
   }
 }
 
-.all-categories {
+.category-name {
   // white-space: nowrap;
   // overflow: hidden;
   // text-overflow: ellipsis;
+  margin-bottom: 32px;
 
   font-size: 18px;
   font-weight: 400;
@@ -25,7 +28,7 @@
   letter-spacing: -0.02em;
   text-transform: uppercase;
 
-  .all-categories-active {
+  .category-is-active {
     font-weight: 700;
     color: #4f2ee8;
   }
