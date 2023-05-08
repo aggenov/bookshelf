@@ -1,9 +1,9 @@
- import {
-   saveStorageBooks,
-   removeElStorage,
-   removeStorageBooks,
-   loadStorageBooks,
- } from '../JS/localStorage/savingInStorage';
+import {
+  saveStorageBooks,
+  removeElStorage,
+  removeStorageBooks,
+  loadStorageBooks,
+} from '../JS/localStorage/savingInStorage';
 
 const LOCAL_KEY = 'LOCAL_KEY';
 
@@ -18,7 +18,7 @@ const refs = {
 refs.closeModalWindow.addEventListener('click', onCloseWindow);
 
 function onCloseWindow(event) {
-  console.log(event.target);
+  // console.log(event.target);
 
   refs.backdropForModal.classList.add('is-hidden');
 }
@@ -26,7 +26,7 @@ function onCloseWindow(event) {
 //   const response = await fetch("https://books-backend.p.goit.global/books/top-books ");
 //   const books = await response.json();
 
-//   console.log(books);
+// console.log(books);
 
 // }
 // allBooks()
@@ -36,9 +36,9 @@ const fetchUsers = async () => {
     'https://books-backend.p.goit.global/books/643282b1e85766588626a085'
   );
   const books = await response.json();
-  console.log(books);
+  // console.log(books);
 
-  console.log(books.buy_links);
+  // console.log(books.buy_links);
 
   InfoAboutBook = {
     image: `${books.book_image}`,
@@ -47,7 +47,7 @@ const fetchUsers = async () => {
     description: `${books.description}`,
     bookId: `${books._id}`,
   };
-  console.log(InfoAboutBook);
+  // console.log(InfoAboutBook);
 
   // let sale = books.buy_links.map(({name, url})=> {
 
@@ -78,24 +78,18 @@ const fetchUsers = async () => {
   const buttonAddToShopingList = document.querySelector('.add-to-shoping-list');
   buttonAddToShopingList.addEventListener('click', onCliclAddToShopingList);
 
-  console.log(buttonAddToShopingList);
+  // console.log(buttonAddToShopingList);
 
   refs.bookDescription.insertAdjacentHTML('afterbegin', renderModalMark);
 
   return books;
 };
 
-
-
-
-
-
 function onCliclAddToShopingList(event) {
   event.target.textContent = 'remove from the shopping list';
 
   // localStorage.setItem("LOCAL_KEY", JSON.stringify(InfoAboutBook))
 
-  
   // *****************добавлена функція додавання в локал сторидж тест ************************
   saveStorageBooks(InfoAboutBook);
   // *************************************
@@ -106,8 +100,8 @@ function onCliclAddToShopingList(event) {
 
   refs.bookDescription.insertAdjacentHTML('beforeend', explanToButton);
 
-  console.log(event.target.textContent);
-  console.log(InfoAboutBook);
+  // console.log(event.target.textContent);
+  // console.log(InfoAboutBook);
 }
 
 fetchUsers();
