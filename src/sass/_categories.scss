@@ -4,6 +4,12 @@
 
   overflow: auto;
 
+  // временные стили
+  outline: 1px solid #4f2ee8;
+  margin-top: 40px;
+  margin-left: 32px;
+  // временные стили
+
   @media screen and (min-width: 768px) {
     width: 337px;
     height: 472px;
@@ -15,6 +21,7 @@
 }
 
 .category-name {
+  display: block;
   // white-space: nowrap;
   // overflow: hidden;
   // text-overflow: ellipsis;
@@ -23,15 +30,15 @@
   font-size: 18px;
   font-weight: 400;
   line-height: 1.33;
-  color: rgba(17, 17, 17, 0.6);
-
   letter-spacing: -0.02em;
-  text-transform: uppercase;
 
-  .category-is-active {
-    font-weight: 700;
-    color: #4f2ee8;
-  }
+  color: rgba(17, 17, 17, 0.6);
+}
+
+.category-is-active {
+  font-weight: 700;
+  color: #4f2ee8;
+  text-transform: uppercase;
 }
 
 // .categories {
