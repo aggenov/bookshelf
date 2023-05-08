@@ -2,13 +2,7 @@
   width: 335px;
   height: 228px;
 
-  overflow: auto;
-
-  // временные стили
-  outline: 1px solid #4f2ee8;
-  margin-top: 40px;
-  margin-left: 32px;
-  // временные стили
+  overflow-y: auto;
 
   @media screen and (min-width: 768px) {
     width: 337px;
@@ -23,9 +17,11 @@
 .category-name {
   display: block;
   max-width: fit-content;
-  // white-space: nowrap;
-  // overflow: hidden;
-  // text-overflow: ellipsis;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
   margin-bottom: 32px;
 
   font-size: 18px;
