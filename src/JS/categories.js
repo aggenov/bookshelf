@@ -2,7 +2,6 @@ import { getData } from './BestSellers/request';
 import { renderCategoryList, sectionRef } from "./home-by-category";
 
 const categoryList = document.querySelector('.categories-list');
-export const activeCategoryItem = document.querySelector('.category-is-active');
 document.addEventListener('click', onClickCategoryName);
 
 export function onClickCategoryName(e) {
@@ -11,7 +10,7 @@ export function onClickCategoryName(e) {
 		sectionRef.innerHTML = '';
 
 		renderCategoryList(categoryBook, sectionRef);
-		isDisableCategoryItem(activeCategoryItem);
+		isDisableCategoryItem();
 		isActiveCategoryItem(categoryBook);
 	};
 };
@@ -21,9 +20,10 @@ export function isActiveCategoryItem(category) {
 	categoryItem.classList.add("category-is-active");
 };
 
-export function isDisableCategoryItem(node) {
-	if (node) {
-		node.classList.remove("category-is-active");
+export function isDisableCategoryItem() {
+	const activeCategoryItem = document.querySelector('.category-is-active');
+	if (activeCategoryItem) {
+		activeCategoryItem.classList.remove("category-is-active");
 	};
 };
 

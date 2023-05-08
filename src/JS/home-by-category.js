@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { bookMarkup } from "../JS/BestSellers/MarkupGenerators/Book";
 import { getData } from "../JS/BestSellers/request";
-import { activeCategoryItem, isActiveCategoryItem, isDisableCategoryItem } from "../JS/categories";
+import { isActiveCategoryItem, isDisableCategoryItem } from "../JS/categories";
 export const BASE_URL = 'https://books-backend.p.goit.global/books/';
 
 export const sectionRef = document.querySelector('.by-category-container');
@@ -26,7 +26,7 @@ function onClickSeeMoreBtn(e) {
   if (e.target.matches('.see-more-btn[data-category]')) {
 		const categoryBook = e.target.getAttribute('data-category');
 
-		isDisableCategoryItem(activeCategoryItem);
+		isDisableCategoryItem();
 		isActiveCategoryItem(categoryBook);
 
     sectionRef.innerHTML = '';
