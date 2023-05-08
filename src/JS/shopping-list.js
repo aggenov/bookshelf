@@ -2,12 +2,12 @@ const shoppingList = document.querySelector('.shopping-main-list-js');
 const emptyList = document.querySelector('.empty-list');
 
 
-const URL = 'https://books-backend.p.goit.global/books/_id';
+// const URL = 'https://books-backend.p.goit.global/books/{id}';
 
 
 // Отримуємо збережені у localStorage книги користувача
-let dataBooks = JSON.parse(localStorage.getItem('books-data')) || [];
-let selectedPage = 1;
+const dataBooks = JSON.parse(localStorage.getItem('books-data')) || [];
+
 
 
 const renderShoppingList = dataBooks => {
@@ -78,11 +78,12 @@ const renderShoppingList = dataBooks => {
                   rel="noopener noreferrer"
                 >
                 <img class='shops-list__img' srcset="
-                ${('')} 48w,
-                ${('')} 96w,
+                ${('./images./amazom.png')} 48w,
+                ${('./images./amazon@2x.png')} 96w,
                 "
-                sizes="48px" src="${require('')}" width="48" height="15" />
+                sizes="48px" src="${('./images./amazom.png')}" width="48" height="15" />
                 </a>
+                
               </li>
               <li>
                 <a
@@ -92,10 +93,10 @@ const renderShoppingList = dataBooks => {
                   rel="noopener noreferrer"
                 >
                 <img class='shops-list__img' srcset="
-                ${('')} 28w,
-                ${('')} 56w,
+                ${('./images./book-shop.png')} 28w,
+                ${('./images./book-shop@2x.png')} 56w,
                 "
-                sizes="28px" src="${('')}" width="28" height="27" />
+                sizes="28px" src="${('./images./book-shop.png')}" width="28" height="27" />
                 </a>
               </li>
               <li>
@@ -106,10 +107,10 @@ const renderShoppingList = dataBooks => {
                   rel="noopener noreferrer"
                 >
                 <img class='shops-list__img' srcset="
-                ${('')} 32w,
-                ${('')} 64w,
+                ${('./images./books.png')} 32w,
+                ${('./images./books@2x.png')} 64w,
                 "
-                sizes="32px" src="${('')}" width="32" height="30" />
+                sizes="32px" src="${('./images./books.png')}" width="32" height="30" />
                 </a>
               </li>
             </ul>
@@ -120,15 +121,15 @@ const renderShoppingList = dataBooks => {
 </li>`;
 })
 .join('');
-}
+} 
 }
 
           
 
-  async function removeCardMarkup(event) {
-    if (event.target.dataset.action !== 'delete') {
-      return;
-    }
-}
+//   async function removeCardMarkup(event) {
+//     if (event.target.dataset.action !== 'delete') {
+//       return;
+//     }
+// }
 
 
