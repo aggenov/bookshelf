@@ -1,3 +1,4 @@
+const burgerMenu = document.querySelector('.modal-mobile-menu');
 const btnOpen = document.querySelector('.header-burger');
 const closeModalMenu = document.querySelector('.mobile-close-btn');
 const checkbox = document.querySelector('.switch');
