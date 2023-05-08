@@ -33,16 +33,26 @@ a {
     display: inline-block;
 }
 
+.header-home::after {
+    background-color: var(--background-active-color);
+    outline: none;
+    border-radius: 36px;
+}
+
 .header-burger {
     width: 28px;
     height: 28px;
     border-radius: 0;
     border-color: transparent;
+    background-color: transparent;
 }
-
-.theme-switch input[type="checkbox"] {
-    display: none;
+.header-burger:hover {
+    border-color: transparent;
+    background-color: transparent;
 }
+// .theme-switch input[type="checkbox"] {
+//     // display: none;
+// }
 
 .theme-switch {
     display: flex;
@@ -52,13 +62,16 @@ a {
 
 .switch {
     margin-right: 14px;
-    padding-top: 10px;
-    
+    padding-top: 15px;
+    cursor: pointer;
 }
 
-.theme-switch label.switch::before {
-    content: "";
-    display: inline-block;
+
+.switch-theme-check:checked+.slider-round {
+background-image: url("../images/Switcher-on.png");
+}
+.slider-round{
+display: inline-block;
     width: 40px;
     height: 20px;
     background-image: url("../images/Switcher-off.png");
@@ -66,9 +79,7 @@ a {
     background-repeat: no-repeat;
     background-position: center;
 }
-
 .header-home {
-    width: 72px;
     height: 34px;
     background-color: transparent;
     border: transparent;
@@ -76,35 +87,48 @@ a {
 }
 
 
-.header-home:hover,
-.header-home:focus {
-    background-color: var(--background-active-color);
-    outline: none;
-    border-radius: 36px;
-}
 
-.header-shop {
-    width: 156px;
-    height: 34px;
-    background-color: transparent;
-    border: transparent;
-    padding: 7px 16px;
-    display: flex;
-}
-
-.header-shop:hover,
-.header-shop:focus {
-    background-color: var(--background-active-color);
-    outline: none;
-    border-radius: 36px;
-
-}
-
-// .header-burger-icon {
-//     width: 28px;
-//     height: 28px;
-//     fill: #111111;
+// .header-home {
+//     background-color: transparent;
+//     border: transparent;
+//     padding: 8px 16px;
 // }
+
+
+// .header-home:hover,
+// .header-home:focus {
+//     background-color: var(--background-active-color);
+//     outline: none;
+//     border-radius: 36px;
+// }
+
+// .header-shop {
+//     width: 156px;
+//     height: 34px;
+//     background-color: transparent;
+//     border: transparent;
+//     padding: 7px 16px;
+//     display: flex;
+// }
+
+// .header-shop:hover,
+// .header-shop:focus {
+//     background-color: var(--background-active-color);
+//     outline: none;
+//     border-radius: 36px;
+
+// }
+
+
+
+.header-burger-icon {
+    width: 28px;
+    height: 28px;
+    stroke: var(--main-color);
+}
+.header-burger-icon:hover {
+    stroke: var(--background-main-color);
+}
 
 @media screen and (max-width: 768px) {
     .header-nav {
@@ -117,10 +141,11 @@ a {
 
 
 .header-nav {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
     }
 
     .nav {
@@ -133,8 +158,6 @@ a {
         width: 20px;
         height: 20px;
         position: absolute;
-        top: 5px;
-        right: 20px;
         color: var(--main-color);
     }
 
@@ -145,9 +168,9 @@ a {
         color: var(--main-color);
     }
 
-    // .header-burger {
-    //     display: none;
-    // }
+    .header-burger {
+        display: none;
+    }
 
     .header-logo {
         margin-right: 40px;
@@ -156,9 +179,8 @@ a {
 }
 
 @media screen and (min-width: 1200px) {
-    .theme-switch label.switch::before {
+    .slider-round {
     display: inline-block;
-    content: "";
     width: 40px;
     height: 24px;
     background-image: url("../images/switcher-off@2x.png");
@@ -173,10 +195,3 @@ a {
 
 }
 
-.header-burger-icon {
-    width: 32px;
-    height: 32px;
-    stroke: var(--main-color);
-}
-.header-burger-icon:hover {
-    stroke: var(--background-main-color);}

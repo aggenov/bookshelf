@@ -1,7 +1,8 @@
 import axios from 'axios';
-import { sectionRef } from '../JS/BestSellers/bestSellers';
 import { bookMarkup } from "../JS/BestSellers/MarkupGenerators/Book";
 export const BASE_URL = 'https://books-backend.p.goit.global/books/';
+
+const sectionRef = document.querySelector('.by-category-container');
 
 document.addEventListener('click', onClickSeeMoreBtn);
 
@@ -21,10 +22,10 @@ async function GetBooksByCategory(category) {
 
 function getBooks(data, category) {
     return `
-        <h3 class="best-sellers-header">${category}</h3>
-        <div class="bookshelf">
+        <h3 class="best-sellers-header">${colorizeMarkup(category)}</h3>
+        <ul class="bookshelf">
             ${data.map(bookMarkup).join('')}
-        </div>`;
+        </ul>`;
 };
 
 async function renderCategoryList(category) {
@@ -36,3 +37,13 @@ async function renderCategoryList(category) {
         console.log(error)
     };
 };
+
+function colorizeMarkup(textContent) {
+  const wordArr = textContent.split(' ');
+  const midpoint = Math.floor(wordArr.length / 2);
+
+  const firstHalf = wordArr.slice(0, midpoint).join(' ');
+  const secondHalf = wordArr.slice(midpoint).join(' ');
+
+  return `${firstHalf} <span>${secondHalf}</span>`;
+}
