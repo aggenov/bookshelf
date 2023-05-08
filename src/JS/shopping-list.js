@@ -7,7 +7,7 @@ const emptyList = document.querySelector('.empty-list');
 
 // Отримуємо збережені у localStorage книги користувача
 let dataBooks = JSON.parse(localStorage.getItem('books-data')) || [];
-let selectedPage = 1;
+
 
 
 const renderShoppingList = dataBooks => {

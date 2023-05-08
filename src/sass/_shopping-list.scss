@@ -1,11 +1,27 @@
 
-
-.container-shopping-list {
-    max-width: 375px;
-    margin: 0 auto;
-    padding: 0 20px;
+.main {
+  width: 100%;
 }
 
+
+@media screen and (min-width: 375px) {
+  .container-shopping-list {
+    max-width: 375px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+    margin: 0 auto;
+   
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container-shopping-list {
+      max-width: none;
+      width: 768px;
+      padding: 0 32px;
+  }
+}
 .violet-color {
     color: rgba(79, 46, 232, 1);
   }
@@ -15,13 +31,10 @@
     font-weight: 700;
     font-size: 32px;
     line-height: 1.19;
-  
+    margin-left: 20px;
     margin-bottom: 40px;
   
-    @media screen and (min-width: 768px) {
-      font-size: 48px;
-      line-height: 1.08;
-    }
+    
   }
 
   .empty-list {
@@ -74,5 +87,9 @@ img {
 }
 .shopping-list__page {
     padding: 40px 0;
+}
+.shopping-main__title {
+  font-size: 48px;
+  line-height: 1.08;
 }
 }
