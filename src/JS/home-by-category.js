@@ -1,17 +1,36 @@
 import axios from 'axios';
 import { bookMarkup } from "../JS/BestSellers/MarkupGenerators/Book";
+import { getData } from "../JS/BestSellers/request";
+import { activeCategoryItem, isActiveCategoryItem, isDisableCategoryItem } from "../JS/categories";
 export const BASE_URL = 'https://books-backend.p.goit.global/books/';
 
 export const sectionRef = document.querySelector('.by-category-container');
+
+// Додав слухача по кліку на книгу
+document.addEventListener('click', onClickBookItem);
+// Функція, яка записує у localStorage клацнуту книгу
+function onClickBookItem(e) {
+	if (e.target.matches('.book-item[data-modal-id]')) {
+		const idBook = e.target.getAttribute('data-modal-id');
+
+		getData(`/books/${idBook}`).then(data => {
+			const bookById = data;
+			localStorage.setItem('data-book-by-id', JSON.stringify(bookById));
+		});
+	};
+};
 
 document.addEventListener('click', onClickSeeMoreBtn);
 
 function onClickSeeMoreBtn(e) {
   if (e.target.matches('.see-more-btn[data-category]')) {
-    const categoryBook = e.target.getAttribute('data-category');
-    sectionRef.innerHTML = '';
+		const categoryBook = e.target.getAttribute('data-category');
 
-    renderCategoryList(categoryBook, sectionRef);
+		isDisableCategoryItem(activeCategoryItem);
+		isActiveCategoryItem(categoryBook);
+
+    sectionRef.innerHTML = '';
+		renderCategoryList(categoryBook, sectionRef);
   };
 }
 
@@ -31,7 +50,8 @@ function getBooks(data, category) {
 export async function renderCategoryList(category, node) {
   try {
     const data = await getBooksByCategory(category);
-    const markup = getBooks(data, category);
+		const markup = getBooks(data, category);
+
     node.insertAdjacentHTML('beforeend', markup); 
   } catch (error) {
       console.log(error);
