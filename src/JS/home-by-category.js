@@ -2,40 +2,40 @@ import axios from 'axios';
 import { bookMarkup } from "../JS/BestSellers/MarkupGenerators/Book";
 export const BASE_URL = 'https://books-backend.p.goit.global/books/';
 
-const sectionRef = document.querySelector('.by-category-container');
+export const sectionRef = document.querySelector('.by-category-container');
 
 document.addEventListener('click', onClickSeeMoreBtn);
 
 function onClickSeeMoreBtn(e) {
-    if (e.target.matches('.see-more-btn[data-category]')) {
-        const categoryBook = e.target.getAttribute('data-category');
-        sectionRef.innerHTML = '';
-        renderCategoryList(categoryBook);
-    };
+  if (e.target.matches('.see-more-btn[data-category]')) {
+    const categoryBook = e.target.getAttribute('data-category');
+    sectionRef.innerHTML = '';
+
+    renderCategoryList(categoryBook, sectionRef);
+  };
 }
 
-async function GetBooksByCategory(category) {
-    const resp = await axios.get(`${BASE_URL}category?category=${category}`);
-    // console.log(resp.data);
-    return resp.data;
+async function getBooksByCategory(category) {
+  const resp = await axios.get(`${BASE_URL}category?category=${category}`);
+  return resp.data;
 };
 
 function getBooks(data, category) {
-    return `
-        <h3 class="best-sellers-header">${colorizeMarkup(category)}</h3>
-        <ul class="bookshelf">
-            ${data.map(bookMarkup).join('')}
-        </ul>`;
+  return `
+    <h3 class="best-sellers-header">${colorizeMarkup(category)}</h3>
+    <ul class="bookshelf" data-category="${category}">
+      ${data.map(bookMarkup).join('')}
+    </ul>`;
 };
 
-async function renderCategoryList(category) {
-    try {
-        const data = await GetBooksByCategory(category);
-        const markup = getBooks(data, category)
-        sectionRef.insertAdjacentHTML('beforeend', markup);
-    } catch (error) {
-        console.log(error)
-    };
+export async function renderCategoryList(category, node) {
+  try {
+    const data = await getBooksByCategory(category);
+    const markup = getBooks(data, category);
+    node.insertAdjacentHTML('beforeend', markup); 
+  } catch (error) {
+      console.log(error);
+  };
 };
 
 function colorizeMarkup(textContent) {
@@ -46,4 +46,4 @@ function colorizeMarkup(textContent) {
   const secondHalf = wordArr.slice(midpoint).join(' ');
 
   return `${firstHalf} <span>${secondHalf}</span>`;
-}
+};
