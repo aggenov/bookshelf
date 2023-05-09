@@ -6,13 +6,15 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #E0E0E0;
+  background: var(--scrollbar-color);
   border-radius: 12px;
 }
 
 .categories-container {
   width: 335px;
   height: 228px;
+  background-color: var(--background-light-color);
+  color: var(--main-color);
 
   overflow-y: auto;
 
@@ -41,7 +43,7 @@
   line-height: 1.33;
   letter-spacing: -0.02em;
 
-  color: rgba(17, 17, 17, 0.6);
+  color: var(--text-color-categories);
 
   &:hover {
     cursor: pointer;
