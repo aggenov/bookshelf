@@ -219,7 +219,7 @@
 .see-more-btn {
   display: block;
   padding: 14px 28px;
-  background-color: #fff;
+  background-color: var(--main-white-color);
 
   margin-left: auto;
   margin-bottom: 40px;
@@ -227,7 +227,7 @@
   transition: all var(--duration-time) var(--timing-function);
 
   &:hover {
-    color: #fff;
+    color: var(--main-white-color);
   }
 }
 

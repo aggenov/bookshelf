@@ -59,7 +59,7 @@ button:focus {
     box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.15);
     background-color: var(--background-main-color);
     border-color: 2px solid var(--background-main-color);
-    color: #ffffff;
+    color: var(--main-white-color);
 }
 button:disabled {
     border-color: var(--btn-default-color);

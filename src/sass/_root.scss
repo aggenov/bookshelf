@@ -5,7 +5,18 @@
     --background-active-color: #EAC645;
 
     --main-color: #111111;
+    --main-white-color: #ffffff;
     
     --duration-time: 250ms;
     --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+:root[ui-theme='dark'] {
+    --background-main-color: #4F2EE8;
+    --background-dar-color: #F6F6F6;
+    --background-light-color: #202024;
+    --background-active-color: #EAC645;
+
+    --main-color: #ffffff;
+    --main-white-color: #111111;
 }
