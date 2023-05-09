@@ -1,3 +1,4 @@
+
 const shoppingList = document.querySelector('.shopping-main-list-js');
 const emptyList = document.querySelector('.empty-list');
 
@@ -6,8 +7,8 @@ const emptyList = document.querySelector('.empty-list');
 
 
 // Отримуємо збережені у localStorage книги користувача
-const dataBooks = JSON.parse(localStorage.getItem('books-data')) || [];
-
+const dataBooks = JSON.parse(localStorage.getItem('LOCAL_KEY')) || [];
+console.log(dataBooks);
 
 
 const renderShoppingList = dataBooks => {
