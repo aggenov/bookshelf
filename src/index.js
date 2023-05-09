@@ -10,3 +10,4 @@ import './JS/colorTheme';
 import './JS/BestSellers/bestSellers';
 import './JS/loader';
 import './JS/modal-start';
+import './JS/testLocalStorage';

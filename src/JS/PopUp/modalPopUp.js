@@ -1,5 +1,11 @@
 import { getData } from '../BestSellers/request';
 import { createModalMarkup } from './Markup/ModalMarkup';
+import {
+  saveStorageBooks,
+   removeElStorage,
+   removeStorageBooks,
+   loadStorageBooks,
+ } from '../localStorage/savingInStorage';
 
 const modalBookInfoRef = document.querySelector('.modal-book-info');
 
@@ -14,6 +20,9 @@ document.addEventListener('click', event => {
     // отправляем запрос за информацией о конкретной книге
     getData(`/books/${bookId}`).then(bookInfo => {
       // создаем разметку модалки из полученной от бекенда информации
+      // *****************добавлена функція додавання в локал сторидж потрібно перевісити на івент кнопки   ************************
+      saveStorageBooks(bookInfo);
+      // *************************************
       const markup = createModalMarkup(bookInfo);
 
       // вставляем через innerHTML, чтоб удалить старую разметку, и добавить новую
@@ -21,6 +30,11 @@ document.addEventListener('click', event => {
     });
   }
 });
+
+
+
+
+
 
 // все что выше - написал андрей (пытался использовать то, что уже было)
 
@@ -43,10 +57,22 @@ const refs = {
   closeModalWindow: document.querySelector('.close-modal-single-book'),
 };
 
+// закриття модалки кліком по бекдропу
+refs.backdropForModal.addEventListener('click', () => {
+  onCloseWindow()
+})
+// закриття модалки натисканням на клавішу Escape
+document.addEventListener('keydown', evt => {
+  if (evt.key === 'Escape') {
+    onCloseWindow();
+  }
+});
+// закриття модалки по кліку на іконку close +
 refs.closeModalWindow.addEventListener('click', onCloseWindow);
 
 function onCloseWindow(event) {
   refs.backdropForModal.classList.add('is-hidden');
+  
 
   // при закрытии модалки удаляем содержимое
   modalBookInfoRef.innerHTML = '';
