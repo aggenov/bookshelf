@@ -50,6 +50,9 @@ refs.closeModalWindow.addEventListener('click', onCloseWindow);
 
 function onCloseWindow(event) {
   refs.backdropForModal.classList.add('is-hidden');
+
+  // при закрытии модалки удаляем содержимое
+  modalBookInfoRef.innerHTML = '';
 }
 
 function openModalWindow() {

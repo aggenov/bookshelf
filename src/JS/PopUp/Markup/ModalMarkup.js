@@ -10,11 +10,10 @@ export function createModalMarkup({
   buy_links,
 }) {
   return `
-  <div class="modal-book-info">
+  <div class="modal-book-container">
     <div class="modal-image-wrapper">
       <img class="book-title" src="${book_image}" alt="">
     </div>
-
     <div class="content-box">
       <p class="title-style"> ${title}</p>
       <p class="style-author"> ${author}</p>
@@ -23,11 +22,7 @@ export function createModalMarkup({
       ${buy_links.map(createShopIcon).join('')}
       </ul>
     </div>
-
-    
-    </div>
-    
-
+  </div>  
     <button 
       class="add-to-shoping-list" 
       type="button"
@@ -35,6 +30,5 @@ export function createModalMarkup({
     >
       Add to shopping list
     </button>
-  
    `;
 }
