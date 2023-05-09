@@ -33,6 +33,14 @@ a {
     display: inline-block;
 }
 
+.header-logo-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-right: 40px;
+}
+
 .header-home::after {
     background-color: var(--background-active-color);
     outline: none;
@@ -40,8 +48,6 @@ a {
 }
 
 .header-burger {
-    width: 28px;
-    height: 28px;
     border-radius: 0;
     border-color: transparent;
     background-color: transparent;
@@ -113,6 +119,10 @@ label:active:after {
     width: 38px;
 }
 
+.header-bookshelf {
+    fill: var(--main-color);
+}
+
 //--------------------------------------------------
 .header-home {
     height: 34px;
@@ -131,34 +141,12 @@ label:active:after {
 }
 
 .active-shop {
-    width: 156px;
-    height: 34px;
     background: var(--background-active-color);
     border-radius: 36px;
     font-weight: 700;
+    padding: 8px 44px 8px 16px;
 }
-// .header-home {
-//     background-color: transparent;
-//     border: transparent;
-//     padding: 8px 16px;
-// }
 
-
-// .header-home:hover,
-// .header-home:focus {
-//     background-color: var(--background-active-color);
-//     outline: none;
-//     border-radius: 36px;
-// }
-
-// .header-shop {
-//     width: 156px;
-//     height: 34px;
-//     background-color: transparent;
-//     border: transparent;
-//     padding: 7px 16px;
-//     display: flex;
-// }
 
 .header-shop:hover,
 .header-shop:focus {
@@ -169,10 +157,9 @@ label:active:after {
 }
 
 
-
 .header-burger-icon {
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
     stroke: var(--main-color);
 }
 .header-burger-icon:hover {
@@ -180,28 +167,31 @@ label:active:after {
 }
 
 @media screen and (max-width: 768px) {
+    .container {
+        padding: 0 18px;
+    }
+    
     .header-nav {
         display: none;
+    }
+
+    .theme-switch {
+        padding: 18px 0;
+        gap: 14px;
+        
     }
 
 }
 
 @media screen and (min-width: 768px) {
 
-
-.header-nav {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    }
-
     .nav {
         height: 72px;
         justify-content: normal;
         align-items: center;
     }
+
+
 
     .header-nav-icon {
         width: 20px;
@@ -222,10 +212,6 @@ label:active:after {
 
     .header-burger {
         display: none;
-    }
-
-    .header-logo {
-        margin-right: 40px;
     }
 
 }

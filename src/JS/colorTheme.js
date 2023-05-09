@@ -1,5 +1,5 @@
 import { colorTheme, checkbox } from './header';
-console.log('colorTheme: ', colorTheme);
+// console.log('colorTheme: ', colorTheme);
 
 //устанавливаем для root: атрибут ui-theme === 'dark'
 document.addEventListener('DOMContentLoaded', () => {
@@ -12,7 +12,7 @@ function init() {
   } else {
     document.documentElement.removeAttribute('ui-theme');
   }
-  console.log(document.documentElement.hasAttribute('ui-theme'));
+  // console.log(document.documentElement.hasAttribute('ui-theme'));
 }
 
 //слушатель checkbox для root: атрибут ui-theme === 'dark'
