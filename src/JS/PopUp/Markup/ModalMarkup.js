@@ -34,7 +34,7 @@ export function createModalMarkup({
     <button 
       class="add-to-shoping-list" 
       type="button"
-      data-modal-id="${_id}"
+      data-book-id="${_id}"
     >
       Add to shopping list
     </button>
