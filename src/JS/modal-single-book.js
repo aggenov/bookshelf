@@ -1,107 +1,114 @@
-import {
-  saveStorageBooks,
-  removeElStorage,
-  removeStorageBooks,
-  loadStorageBooks,
-} from '../JS/localStorage/savingInStorage';
+/*
 
-const LOCAL_KEY = 'LOCAL_KEY';
+  попрошу вас переехать в папку PopUp файл modalPopUp.js
+  п.с андрей
 
-let InfoAboutBook = {};
+*/
 
-const refs = {
-  backdropForModal: document.querySelector('.backdrop-modal'),
-  bookDescription: document.querySelector('.modal'),
-  closeModalWindow: document.querySelector('.close-modal-single-book'),
-};
+// import {
+//   saveStorageBooks,
+//   removeElStorage,
+//   removeStorageBooks,
+//   loadStorageBooks,
+// } from '../JS/localStorage/savingInStorage';
 
-refs.closeModalWindow.addEventListener('click', onCloseWindow);
+// const LOCAL_KEY = 'LOCAL_KEY';
 
-function onCloseWindow(event) {
-  // console.log(event.target);
+// let InfoAboutBook = {};
 
-  refs.backdropForModal.classList.add('is-hidden');
-}
-// const allBooks = async () => {
-//   const response = await fetch("https://books-backend.p.goit.global/books/top-books ");
-//   const books = await response.json();
+// const refs = {
+//   backdropForModal: document.querySelector('.backdrop-modal'),
+//   bookDescription: document.querySelector('.modal'),
+//   closeModalWindow: document.querySelector('.close-modal-single-book'),
+// };
 
-// console.log(books);
+// refs.closeModalWindow.addEventListener('click', onCloseWindow);
 
+// function onCloseWindow(event) {
+//   // console.log(event.target);
+
+//   refs.backdropForModal.classList.add('is-hidden');
 // }
-// allBooks()
+// // const allBooks = async () => {
+// //   const response = await fetch("https://books-backend.p.goit.global/books/top-books ");
+// //   const books = await response.json();
 
-const fetchUsers = async () => {
-  const response = await fetch(
-    'https://books-backend.p.goit.global/books/643282b1e85766588626a085'
-  );
-  const books = await response.json();
-  // console.log(books);
+// // console.log(books);
 
-  // console.log(books.buy_links);
+// // }
+// // allBooks()
 
-  InfoAboutBook = {
-    image: `${books.book_image}`,
-    title: `${books.title}`,
-    author: `${books.author}`,
-    description: `${books.description}`,
-    bookId: `${books._id}`,
-  };
-  // console.log(InfoAboutBook);
+// const fetchUsers = async () => {
+//   const response = await fetch(
+//     'https://books-backend.p.goit.global/books/643282b1e85766588626a085'
+//   );
+//   const books = await response.json();
+//   // console.log(books);
 
-  // let sale = books.buy_links.map(({name, url})=> {
+//   // console.log(books.buy_links);
 
-  //     return `<ul>
-  //     <li>
-  //     <a href="${url}" target="_blank">
-  //     <img src="/js/images/amazon.png"></img>
-  //     </a>
-  //     </li>
-  //     </ul>`
+//   InfoAboutBook = {
+//     image: `${books.book_image}`,
+//     title: `${books.title}`,
+//     author: `${books.author}`,
+//     description: `${books.description}`,
+//     bookId: `${books._id}`,
+//   };
+//   // console.log(InfoAboutBook);
 
-  // })
+//   // let sale = books.buy_links.map(({name, url})=> {
 
-  const renderModalMark = `
-  <div>
-      <img class="book-title" src="${books.book_image}" alt="">
-  </div>
-  <div class="content-box">
-      <p class="title-style"> ${books.title}</p>
-      <p class="style-author"> ${books.author}</p>
-      <p class="book-description"> ${books.description}</p>
+//   //     return `<ul>
+//   //     <li>
+//   //     <a href="${url}" target="_blank">
+//   //     <img src="/js/images/amazon.png"></img>
+//   //     </a>
+//   //     </li>
+//   //     </ul>`
 
-  </div>
-   `;
+//   // })
 
-  //  <div> ${sale}</div>
+//   const renderModalMark = `
+//   <div>
+//       <img class="book-title" src="${books.book_image}" alt="">
+//   </div>
+//   <div class="content-box">
+//       <p class="title-style"> ${books.title}</p>
+//       <p class="style-author"> ${books.author}</p>
+//       <p class="book-description"> ${books.description}</p>
 
-  const buttonAddToShopingList = document.querySelector('.add-to-shoping-list');
-  buttonAddToShopingList.addEventListener('click', onCliclAddToShopingList);
+//   </div>
+//    `;
 
-  // console.log(buttonAddToShopingList);
+//   //  <div> ${sale}</div>
 
-  refs.bookDescription.insertAdjacentHTML('afterbegin', renderModalMark);
+//   const buttonAddToShopingList = document.querySelector('.add-to-shoping-list');
+//   buttonAddToShopingList.addEventListener('click', onCliclAddToShopingList);
 
-  return books;
-};
+//   // console.log(buttonAddToShopingList);
 
-function onCliclAddToShopingList(event) {
-  event.target.textContent = 'remove from the shopping list';
+//   refs.bookDescription.insertAdjacentHTML('afterbegin', renderModalMark);
 
-  // localStorage.setItem("LOCAL_KEY", JSON.stringify(InfoAboutBook))
+//   return books;
+// };
 
-  // *****************добавлена функція додавання в локал сторидж тест ************************
-  saveStorageBooks(InfoAboutBook);
-  // *************************************
+// function onCliclAddToShopingList(event) {
+//   event.target.textContent = 'remove from the shopping list';
 
-  const explanToButton = `
- <p>Сongratulations! You have added the book to the shopping list. 
- To delete, press the button “Remove from the shopping list”.</p>`;
+//   // localStorage.setItem("LOCAL_KEY", JSON.stringify(InfoAboutBook))
 
-  refs.bookDescription.insertAdjacentHTML('beforeend', explanToButton);
+//   // *****************добавлена функція додавання в локал сторидж тест ************************
+//   saveStorageBooks(InfoAboutBook);
+//   // *************************************
 
-  // console.log(event.target.textContent);
-  // console.log(InfoAboutBook);
-}
+//   const explanToButton = `
+//  <p>Сongratulations! You have added the book to the shopping list.
+//  To delete, press the button “Remove from the shopping list”.</p>`;
 
-fetchUsers();
+//   refs.bookDescription.insertAdjacentHTML('beforeend', explanToButton);
+
+//   // console.log(event.target.textContent);
+//   // console.log(InfoAboutBook);
+// }
+
+// fetchUsers();

@@ -68,7 +68,7 @@
 }
 
 .book-title {
-  position: absolute;
+  display: inline-block;
   top: 40px;
   left: 40px;
   width: 192px;
@@ -105,6 +105,13 @@
 
 .list-link-book-shop {
   padding-left: 256px;
-  display: flex;
   margin-bottom: 50px;
+
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.logo {
+  filter: grayscale(100%);
 }

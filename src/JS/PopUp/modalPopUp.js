@@ -1,6 +1,9 @@
 // тут был андрей
 
 import { getData } from '../BestSellers/request';
+import { createModalMarkup } from './Markup/ModalMarkup';
+
+const modalBookInfoRef = document.querySelector('.modal-book-info');
 
 document.addEventListener('click', event => {
   if (event.target.matches('.book-item[data-modal-id]')) {
@@ -17,33 +20,10 @@ document.addEventListener('click', event => {
 
       const markup = createModalMarkup(bookInfo);
 
-      refs.bookDescription.innerHTML = markup;
+      modalBookInfoRef.innerHTML = markup;
     });
   }
 });
-
-// функция, которая отрисует модалку из полученной инфы
-function createModalMarkup({
-  _id,
-  list_name,
-  book_image,
-  title,
-  author,
-  description,
-  buy_links,
-}) {
-  return `
-  <div>
-      <img class="book-title" src="${book_image}" alt="">
-  </div>
-  <div class="content-box">
-      <p class="title-style"> ${title}</p>
-      <p class="style-author"> ${author}</p>
-      <p class="book-description"> ${description}</p>
-
-  </div>
-   `;
-}
 
 // все что выше - написал андрей (пытался использовать то, что уже было)
 
