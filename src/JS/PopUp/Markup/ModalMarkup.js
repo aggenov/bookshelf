@@ -9,6 +9,14 @@ export function createModalMarkup({
   description,
   buy_links,
 }) {
+  // если в описании пусто, то вместо него выводим сообщение, что описания нет.
+  if (!description) {
+    description = `
+    There is no description for this book yet. 
+    Try visiting any of the stores provided below.
+    `;
+  }
+
   return `
   <div class="modal-book-container">
     <div class="modal-image-wrapper">
