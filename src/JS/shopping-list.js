@@ -79,8 +79,8 @@ const renderShoppingList = dataBooks => {
                   rel="noopener noreferrer"
                 >
                 <img class='shops-list__img' srcset="
-                ${('./images./amazom.png')} 48w,
-                ${('./images./amazon@2x.png')} 96w,
+                ${('../../../images/amazon.png')} 48w,
+                ${('../../../images/amazon@2x.png')} 96w,
                 "
                 sizes="48px" src="${('./images./amazom.png')}" width="48" height="15" />
                 </a>
@@ -94,8 +94,8 @@ const renderShoppingList = dataBooks => {
                   rel="noopener noreferrer"
                 >
                 <img class='shops-list__img' srcset="
-                ${('./images./book-shop.png')} 28w,
-                ${('./images./book-shop@2x.png')} 56w,
+                ${('../../../images/books.png')} 28w,
+                ${('../../../images/books@2x.png')} 56w,
                 "
                 sizes="28px" src="${('./images./book-shop.png')}" width="28" height="27" />
                 </a>
@@ -108,8 +108,8 @@ const renderShoppingList = dataBooks => {
                   rel="noopener noreferrer"
                 >
                 <img class='shops-list__img' srcset="
-                ${('./images./books.png')} 32w,
-                ${('./images./books@2x.png')} 64w,
+                ${('../../../images/book-shop.png')} 32w,
+                ${('../../../images/book-shop2x.png')} 64w,
                 "
                 sizes="32px" src="${('./images./books.png')}" width="32" height="30" />
                 </a>
