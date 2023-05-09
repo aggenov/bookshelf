@@ -22,21 +22,25 @@
     <include src="./partials/header-shoplist.html"></include>
     <include src="./partials/mobile-menu.html"></include>
 
-    <main class="main">
+    <main class="main-shopping-list">
+      <include src="./partials/support.html"></include>
       <section class="shopping-list__page container-shopping-list">
         <h1 class="shopping-main__title">
           Shopping <span class="violet-color">List</span>
         </h1>
-        <div class="empty-list visually-hidden">
-          <p class="shopping-empty-text" id="no-books-message">
-            This page is empty, add some books and proceed to order.
-          </p>
-          <img
-            class="shopping-empty-img"
-            srcset="./images/empty.png 265w, ./images/empty@2x.png 322w"
-            sizes="(min-width: 768px) 322px,(max-width: 767px) 265px, 100vw"
-            alt="books"
-          />
+        <div class="shopping-cart-container">
+          <ul class="shopping-cart"></ul>
+          <div class="empty-list visually-hidden">
+            <p class="shopping-empty-text" id="no-books-message">
+              This page is empty, add some books and proceed to order.
+            </p>
+            <img
+              class="shopping-empty-img"
+              srcset="./images/empty.png 265w, ./images/empty@2x.png 322w"
+              sizes="(min-width: 768px) 322px,(max-width: 767px) 265px, 100vw"
+              alt="books"
+            />
+          </div>
         </div>
       </section>
     </main>
