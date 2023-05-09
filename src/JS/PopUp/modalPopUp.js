@@ -22,6 +22,11 @@ document.addEventListener('click', event => {
   }
 });
 
+
+
+
+
+
 // все что выше - написал андрей (пытался использовать то, что уже было)
 
 // все что ниже - код из modal-single-book.js (некоторые вещи дописал)
@@ -43,10 +48,22 @@ const refs = {
   closeModalWindow: document.querySelector('.close-modal-single-book'),
 };
 
+// закриття модалки кліком по бекдропу
+refs.backdropForModal.addEventListener('click', () => {
+  onCloseWindow()
+})
+// закриття модалки натисканням на клавішу Escape
+document.addEventListener('keydown', evt => {
+  if (evt.key === 'Escape') {
+    onCloseWindow();
+  }
+});
+// закриття модалки по кліку на іконку close +
 refs.closeModalWindow.addEventListener('click', onCloseWindow);
 
 function onCloseWindow(event) {
   refs.backdropForModal.classList.add('is-hidden');
+  
 
   // при закрытии модалки удаляем содержимое
   modalBookInfoRef.innerHTML = '';
