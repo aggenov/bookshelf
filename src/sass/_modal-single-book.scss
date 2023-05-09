@@ -19,26 +19,44 @@
 
 .close-modal-single-book {
   position: absolute;
+  top: 12px;
+  right: 12px;
 
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
   padding: 0;
   width: 28px;
   height: 28px;
   cursor: pointer;
+border: none;
+background-color: #fff;
+  // border: 1px solid rgba(0, 0, 0, 0.1);
+  // transition: border var(--trans-der-and-func);
+ 
 
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  transition: border var(--trans-der-and-func);
-
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 768px) {
     top: 24px;
     right: 24px;
   }
 }
+.position{
+  fill: #111;
+  stroke: #111;
 
-.close-modal:hover,
-.close-modal:focus {
-  background: #e7e9fc;
-  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  &:hover{
+    fill: var(--background-main-color);
+    stroke: var(--background-main-color);
+    transform: scale(1.25);
+  }
+}
+
+.close-modal-single-book:hover,
+.close-modal-single-book:focus {
+  background: #fff;
+  // box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+  //   0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
   border: transparent;
 }
 
@@ -80,6 +98,7 @@
 
 .title-style {
   margin-bottom: 8px;
+  color: #111;
 
   display: block;
 
@@ -147,6 +166,7 @@
 
 .book-description {
   margin-bottom: 22px;
+  color: #111;
 
   font-size: 14px;
   line-height: 1.29;
