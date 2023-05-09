@@ -7,8 +7,7 @@
   width: 100%;
   height: 100%;
   background-color: rgba(46, 47, 66, 0.4);
-  transition: opacity var(--trans-der-and-func),
-    visibility var(--trans-der-and-func);
+  transition: all var(--duration-time) var(--timing-function);
 }
 
 // width: 40px;
