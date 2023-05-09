@@ -1,67 +1,78 @@
- import {
-  saveStorageBooks,
-  removeElStorage,
-  removeStorageBooks,
-  loadStorageBooks,
-} from '../JS/localStorage/savingInStorage';
-
-const LOCAL_KEY = 'LOCAL_KEY';
+const LOCAL_KEY = "LOCAL_KEY";
 
 let InfoAboutBook = {};
 
 const refs = {
-  backdropForModal: document.querySelector('.backdrop-modal'),
-  bookDescription: document.querySelector('.modal'),
-  closeModalWindow: document.querySelector('.close-modal-single-book'),
-};
 
-refs.closeModalWindow.addEventListener('click', onCloseWindow);
+  backdropModalBook: document.querySelector(".backdrop-modal"),
+  bookDescription: document.querySelector(".modal"),
+  buttonCloseModal: document.querySelector(".close-modal-single-book"),
 
-function onCloseWindow(event) {
-  // console.log(event.target);
-
-  refs.backdropForModal.classList.add('is-hidden');
 }
-// const allBooks = async () => {
-//   const response = await fetch("https://books-backend.p.goit.global/books/top-books ");
-//   const books = await response.json();
+refs.backdropModalBook.addEventListener("click", onModalClose);
+refs.buttonCloseModal.addEventListener("click", ()=>{
+  refs.backdropModalBook.classList.add('is-hidden-modal-book')
+  console.log("button close n")
+});
 
-// console.log(books);
+function onModalClose(){
+  refs.backdropModalBook.classList.add('is-hidden-modal-book')
+}
+function onModalOpen(){
+  refs.backdropModalBook.classList.remove('is-hidden-modal-book')
+}
 
-// }
-// allBooks()
+// Отримання id книжки  наразі проблема тут
+document.addEventListener('click', getPersonalBookId)
 
-const fetchUsers = async () => {
-  const response = await fetch(
-    'https://books-backend.p.goit.global/books/643282b1e85766588626a085'
-  );
-  const books = await response.json();
-  // console.log(books);
+function getPersonalBookId(event){
+  onModalOpen()
+  fetchBooksInfo()
+ 
 
-  // console.log(books.buy_links);
+  if(event.target.matches('.book-item[data-modal-id]')){
+    let personalBookId = event.target.getAttribute('data-modal-id')
+     console.log(personalBookId)
+    //  цю змінну personalBookId не можу передати на 47 рядок в кінці запиту щоб динамічно підставляти id
 
-  InfoAboutBook = {
+     
+
+    return personalBookId;
+  }
+
+}
+document.removeEventListener('click', getPersonalBookId)
+
+// Запит на бек за детальною інформацією по обраній книжці за id
+ const fetchBooksInfo = async () => {
+    const response = await fetch("https://books-backend.p.goit.global/books/643282b1e85766588626a085");
+    const books = await response.json();
+    console.log(books);
+
+  // console.log(books.buy_links)
+// створення об'єкту з потрібними полями опису вибраної книги
+InfoAboutBook ={
     image: `${books.book_image}`,
     title: `${books.title}`,
     author: `${books.author}`,
     description: `${books.description}`,
-    bookId: `${books._id}`,
+    _id: `${books._id}`
   };
-  // console.log(InfoAboutBook);
+  console.log(InfoAboutBook);
 
-  // let sale = books.buy_links.map(({name, url})=> {
+    // let sale = books.buy_links.map(({name, url})=> {
+    
+    //     return `<ul> 
+    //     <li>
+    //     <a href="${url}" target="_blank"> 
+    //     <img src="/js/images/amazon.png"></img>
+    //     </a>
+    //     </li>
+    //     </ul>`
 
-  //     return `<ul>
-  //     <li>
-  //     <a href="${url}" target="_blank">
-  //     <img src="/js/images/amazon.png"></img>
-  //     </a>
-  //     </li>
-  //     </ul>`
-
-  // })
-
-  const renderModalMark = `
+    // })
+// розмітка для вмісту модального вікна 
+      const renderModalMark = `
   <div>
       <img class="book-title" src="${books.book_image}" alt="">
   </div>
@@ -71,37 +82,44 @@ const fetchUsers = async () => {
       <p class="book-description"> ${books.description}</p>
 
   </div>
-   `;
+   `
 
-  //  <div> ${sale}</div>
+  //  <div> ${sale}</div> 
+      
+// слухач на кнопку Add to shoping list
+      const buttonAddToShopingList = document.querySelector(".add-to-shoping-list")
+      buttonAddToShopingList.addEventListener("click", onCliclAddToShopingList); 
 
-  const buttonAddToShopingList = document.querySelector('.add-to-shoping-list');
-  buttonAddToShopingList.addEventListener('click', onCliclAddToShopingList);
 
-  // console.log(buttonAddToShopingList);
 
-  refs.bookDescription.insertAdjacentHTML('afterbegin', renderModalMark);
+// рендер розмітки модалки
+refs.bookDescription.insertAdjacentHTML("afterbegin", renderModalMark);
 
-  return books;
-};
+    return books;
+  };
 
-function onCliclAddToShopingList(event) {
-  event.target.textContent = 'remove from the shopping list';
 
-  // localStorage.setItem("LOCAL_KEY", JSON.stringify(InfoAboutBook))
 
-  // *****************добавлена функція додавання в локал сторидж тест ************************
-  saveStorageBooks(InfoAboutBook);
-  // *************************************
-
-  const explanToButton = `
+  // події після кліку на кнопку Add to shoping list
+  function onCliclAddToShopingList(event){
+    event.target.textContent = "remove from the shopping list";
+        
+ localStorage.setItem("LOCAL_KEY", JSON.stringify(InfoAboutBook))
+    
+ const explanToButton = `
  <p>Сongratulations! You have added the book to the shopping list. 
  To delete, press the button “Remove from the shopping list”.</p>`;
 
-  refs.bookDescription.insertAdjacentHTML('beforeend', explanToButton);
+ refs.bookDescription.insertAdjacentHTML("beforeend", explanToButton)
+    
+console.log(event.target.textContent);
+console.log(InfoAboutBook);
 
-  // console.log(event.target.textContent);
-  // console.log(InfoAboutBook);
-}
 
-fetchUsers();
+  }
+
+
+  fetchBooksInfo()
+
+  
+ 
