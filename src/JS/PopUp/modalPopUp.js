@@ -7,7 +7,6 @@ document.addEventListener('click', event => {
   if (event.target.matches('.book-item[data-modal-id]')) {
     // если таргет это элемент книги с атрибутом, то забираем значение атрибута
     const bookId = event.target.getAttribute('data-modal-id');
-    console.log(bookId);
 
     // открываем модалку
     openModalWindow();
