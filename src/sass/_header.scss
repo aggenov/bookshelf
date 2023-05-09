@@ -179,6 +179,22 @@ label:active:after {
     stroke: var(--background-main-color);
 }
 
+
+.btn-sign-up{
+    width: 184px;
+    height: 48px;
+    border-radius: 18px;
+    background-color: var(--background-main-color);
+    color: #ffffff;
+    
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 24px;
+    padding: 14px;
+}
+
 @media screen and (max-width: 768px) {
     .header-nav {
         display: none;
