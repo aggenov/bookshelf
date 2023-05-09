@@ -18,6 +18,7 @@ export function onClickCategoryName(e) {
 export function isActiveCategoryItem(category) {
 	const categoryItem = document.querySelector(`.category-name[data-category="${category}"]`);
 	categoryItem.classList.add("category-is-active");
+	categoryItem.scrollIntoView({block: "center", behavior: "smooth"});
 };
 
 export function isDisableCategoryItem() {
