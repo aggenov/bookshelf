@@ -47,7 +47,7 @@ export function createShopIcon({ name, url }) {
 function ShopIcon(name, url, srcset1x, srcset2x, width) {
   return `
     <li>
-      <a href="${url}">
+      <a href="${url}" target="_blank">
         <img
           src="${srcset1x}"
           class="logo"
