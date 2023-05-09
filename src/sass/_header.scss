@@ -1,5 +1,5 @@
 .header {
-    background: #FFFFFF;
+    background: var(--main-white-color);
     border: 1.5px solid var(--main-color);
     border-radius: 0px 0px 8px 8px;
     min-width: 320px;
@@ -60,25 +60,60 @@ a {
     align-items: center;
 }
 
-.switch {
+#switch {
     margin-right: 14px;
     padding-top: 15px;
     cursor: pointer;
 }
 
 
-.switch-theme-check:checked+.slider-round {
-background-image: url("../images/Switcher-on.png");
+input[type=checkbox] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
 }
-.slider-round{
-display: inline-block;
+
+label {
+    cursor: pointer;
+    text-indent: -9999px;
     width: 40px;
     height: 20px;
-    background-image: url("../images/Switcher-off.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+
+    display: block;
+    border-radius: 20px;
+    position: relative;
+
+    background: linear-gradient(180deg, var(--background-main-color) 0%, #DCDCDC 100%);
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
+
+label:after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 18px;
+    height: 18px;
+    background: var(--main-white-color);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+input:checked+label {
+    background: linear-gradient(180deg, var(--background-main-color) 0%, #686868 100%);
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+input:checked+label:after {
+    left: calc(100% - 1px);
+    transform: translateX(-100%);
+}
+
+label:active:after {
+    width: 38px;
+}
+
+//--------------------------------------------------
 .header-home {
     height: 34px;
     background-color: transparent;
@@ -125,13 +160,13 @@ display: inline-block;
 //     display: flex;
 // }
 
-// .header-shop:hover,
-// .header-shop:focus {
-//     background-color: var(--background-active-color);
-//     outline: none;
-//     border-radius: 36px;
+.header-shop:hover,
+.header-shop:focus {
+    background-color: var(--background-active-color);
+    outline: none;
+    border-radius: 36px;
 
-// }
+}
 
 
 
@@ -180,6 +215,9 @@ display: inline-block;
         line-height: 1.28;
         text-transform: uppercase;
         color: var(--main-color);
+    }
+    .header-nav-link:hover {
+        color: var(--background-main-color);
     }
 
     .header-burger {

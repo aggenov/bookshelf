@@ -1,14 +1,22 @@
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 167px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-color);
+  border-radius: 12px;
+}
+
 .categories-container {
   width: 335px;
   height: 228px;
+  background-color: var(--background-light-color);
+  color: var(--main-color);
 
-  overflow: auto;
-
-  // временные стили
-  outline: 1px solid #4f2ee8;
-  margin-top: 40px;
-  margin-left: 32px;
-  // временные стили
+  overflow-y: auto;
 
   @media screen and (min-width: 768px) {
     width: 337px;
@@ -23,9 +31,11 @@
 .category-name {
   display: block;
   max-width: fit-content;
-  // white-space: nowrap;
-  // overflow: hidden;
-  // text-overflow: ellipsis;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
   margin-bottom: 32px;
 
   font-size: 18px;
@@ -33,15 +43,16 @@
   line-height: 1.33;
   letter-spacing: -0.02em;
 
-  color: rgba(17, 17, 17, 0.6);
+  color: var(--text-color-categories);
 
   &:hover {
     cursor: pointer;
+    color: var(--background-main-color);
   }
 }
 
 .category-is-active {
   font-weight: 700;
-  color: #4f2ee8;
+  color: var(--background-main-color);
   text-transform: uppercase;
 }

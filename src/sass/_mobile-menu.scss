@@ -5,7 +5,7 @@
     top: 0;
     left: 0;
     z-index: 1000;
-    background: linear-gradient(to bottom, var(--background-main-color), #FFFFFF);
+    background: linear-gradient(to bottom, var(--background-main-color), var(--main-white-color));
     display: none;
 }
 
@@ -16,7 +16,7 @@
     justify-content: space-between;
     align-items: center;
     height: 64px;
-    background-color: #FFFFFF;
+    background-color: var(--main-white-color);
     border: 1.5px solid var(--main-color);
     border-radius: 0px 0px 8px 8px;
     padding: 18px 50px 18px 20px;
@@ -58,15 +58,15 @@
     font-weight: 500;
     line-height: 1.28;
     text-transform: uppercase;
-    color: #FFFFFF;
+    color: var(--main-white-color);
 }
 
 .header-nav-icon-mob {
     width: 20px;
     height: 20px;
     // position: absolute;
-    stroke: #FFFFFF;
-    fill:#FFFFFF;
+    stroke: var(--main-white-color);
+    fill:var(--main-white-color);
 }
 
 
@@ -82,7 +82,7 @@
 .mobile-btn-log {
     width: 118px;
     height: 48px;
-    background: #FFFFFF;
+    background: var(--main-white-color);
     border: 1.5px solid var(--main-color);
     border-radius: 18px;
     position: absolute;

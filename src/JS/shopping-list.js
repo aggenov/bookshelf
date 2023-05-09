@@ -2,11 +2,11 @@ const shoppingList = document.querySelector('.shopping-main-list-js');
 const emptyList = document.querySelector('.empty-list');
 
 
-// const URL = 'https://books-backend.p.goit.global/books/_id';
+// const URL = 'https://books-backend.p.goit.global/books/{id}';
 
 
 // Отримуємо збережені у localStorage книги користувача
-let dataBooks = JSON.parse(localStorage.getItem('books-data')) || [];
+const dataBooks = JSON.parse(localStorage.getItem('books-data')) || [];
 
 
 
@@ -121,7 +121,7 @@ const renderShoppingList = dataBooks => {
 </li>`;
 })
 .join('');
-}
+} 
 }
 
           
