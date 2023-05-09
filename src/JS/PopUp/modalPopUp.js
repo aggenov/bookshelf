@@ -1,5 +1,3 @@
-// тут был андрей
-
 import { getData } from '../BestSellers/request';
 import { createModalMarkup } from './Markup/ModalMarkup';
 
@@ -16,10 +14,10 @@ document.addEventListener('click', event => {
 
     // отправляем запрос за информацией о конкретной книге
     getData(`/books/${bookId}`).then(bookInfo => {
-      console.log(bookInfo);
-
+      // создаем разметку модалки из полученной от бекенда информации
       const markup = createModalMarkup(bookInfo);
 
+      // вставляем через innerHTML, чтоб удалить старую разметку, и добавить новую
       modalBookInfoRef.innerHTML = markup;
     });
   }
@@ -27,7 +25,7 @@ document.addEventListener('click', event => {
 
 // все что выше - написал андрей (пытался использовать то, что уже было)
 
-// все что ниже - код из modal-single-book.js
+// все что ниже - код из modal-single-book.js (некоторые вещи дописал)
 
 // import {
 //   saveStorageBooks,
