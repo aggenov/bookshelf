@@ -31,15 +31,15 @@ const { amazon, apple, bookshop } = images;
 
 export function createShopIcon({ name, url }) {
   if (name === 'Amazon') {
-    console.log(name);
+    // console.log(name);
     return ShopIcon(name, url, amazon['1x'], amazon['2x'], amazon.width);
   }
   if (name === 'Apple Books') {
-    console.log(name);
+    // console.log(name);
     return ShopIcon(name, url, apple['1x'], apple['2x'], apple.width);
   }
   if (name === 'Bookshop') {
-    console.log(name);
+    // console.log(name);
     return ShopIcon(name, url, bookshop['1x'], bookshop['2x'], bookshop.width);
   }
 }
