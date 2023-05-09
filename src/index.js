@@ -5,7 +5,6 @@ import './JS/categories';
 import './JS/scroll-up';
 import './JS/modal-single-book';
 import './JS/support';
-import './JS/categories';
 import './JS/scroll-up';
 import './JS/colorTheme';
 import './JS/BestSellers/bestSellers';
