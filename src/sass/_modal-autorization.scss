@@ -1,16 +1,57 @@
-.modal{
+.modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 579px;
+    height: 516px;
+
+    background-color: var(--background-light-color);
+
+    font-size: 16px;
+    font-weight: 700;
 }
 
 
 .btn-close-modal{
+    width: 28px;
+    height: 28px;
+    padding: 0;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+        top: 12px;
+        right: 12px;
+    border-color:transparent;
+        background-color: var(--background-light-color);
+
+    &:hover {
+            cursor: pointer;
+            border-color: transparent;
+            background-color: var(--background-light-color);
+        }
+
+
+   @media screen and (min-width: 768px) {
+       top: 24px;
+       right: 24px;
+   }
 }
+
 .backdrop {
     position: fixed;
     width: 100vw;
     height: 100vh;
-    background-color: aquamarine;
+    background-color: var(--background-main-color);
 
     top: 0;
     left: 0;
@@ -24,22 +65,4 @@
 .form-start{
     display: flex;
     flex-direction: column;
-}
-
-.modal {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 600px;
-    height: 400px;
-    background-color: #fff;
-
-    font-size: 16px;
-    font-weight: 700;
 }
