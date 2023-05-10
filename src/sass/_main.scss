@@ -84,3 +84,7 @@ button {
     overflow-y: scroll;
     z-index: 999;
 }
+
+body.modal-open {
+  overflow: hidden;
+}
