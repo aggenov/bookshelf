@@ -66,7 +66,9 @@
 
 
 
-
+.header-nav-icon{
+    fill: var(--main-color);
+}
 
 .header-home {
     height: 34px;
@@ -81,6 +83,13 @@
     justify-content: center;
     align-items: center;
     gap: 4px;
+    color: var(--main-color);
+
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.29;
+    letter-spacing: -0.04em;
 
     &:hover {
         .header-nav-link {
@@ -96,9 +105,10 @@
 
 .active {
     background: var(--background-active-color);
+    font-weight: 700;
+    color: #111;
     .header-nav-icon{
-        fill:var(--main-color);
-
+        fill:#111;
     }
 }
 
@@ -192,86 +202,63 @@ label:active:after {
     stroke: var(--background-main-color);
 }
 
-
-.btn-sign-up{
+.users-button{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.btn-signup{
     width: 184px;
     height: 48px;
     border-radius: 18px;
     background-color: var(--background-main-color);
     color: #ffffff;
     
-
+    // display: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-left: 24px;
     padding: 14px;
 }
+.btn-user {
+    width: 185px;
+    height: 45px;
+    display: none;
+    // display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background-color: var(--background-main-color);
+    color: #fff;
 
-@media screen and (max-width: 768px) {
-    .container {
-        padding: 0 18px;
+    .text-user {
+        color: #fff;
+    }
+
+    .row-down {
+        stroke: #fff;
     }
 }
+.btn-logout {
+    width: 184px;
+    height: 48px;
+    border-radius: 18px;
+    background-color: var(--background-light-color);
+    color: var(--main-color);
+
+    display: none;
+    // display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 24px;
+    padding: 14px;
+}
+
+
 @media screen and (max-width: 767px) {
-   
-    
-   
-
-    .theme-switch {
-        padding: 18px 0;
-        gap: 14px;
-        
-    }
-
-}
-
-@media screen and (min-width: 768px) {
-
-    .header-nav-icon {
-        width: 20px;
-        height: 20px;
-        // position: absolute;
-        fill: var(--main-color);
-    }
-
-    .header-nav-link {
-        font-weight: 500;
-        line-height: 1.28;
-        text-transform: uppercase;
-        color: var(--main-color);
-
-        &:hover{
-        color: var(--background-main-color);
-        }
-    }
-
-    .header-burger {
-        display: none;
-    }
-
-}
-
-@media screen and (min-width: 1200px) {
-    .slider-round {
-    display: inline-block;
-    width: 40px;
-    height: 24px;
-    background-image: url("../images/switcher-off@2x.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    }
-}
-
-
-.users-button{
-    @media screen and(max-width:767px) {
-        display: none;
-    }
-}
-
-.btn-signup{
+btn-logout{
     width: 184px;
     height: 48px;
     padding: 14px;
@@ -288,20 +275,15 @@ label:active:after {
     }
 }
 
-.btn-user{
 
-    width: 185px;
-    height: 45px;
-    display: none;
-    // display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 12px;
-    background-color: var(--background-main-color);
-    color: #fff;
-
-    .row-down {
-            stroke: #fff;
-        }
 }
+ @media screen and (max-width: 768px) {
+     .container {
+         padding: 0 18px;
+     }
+
+     .users-button {
+         display: none;
+     }
+
+ }
