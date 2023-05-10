@@ -1,6 +1,12 @@
 import { getData } from '../BestSellers/request';
 import { createModalMarkup } from './Markup/ModalMarkup';
 
+import {
+  saveStorageBooks,
+  removeElStorage,
+  loadStorageBooks,
+} from '../localStorage/savingInStorage';
+
 const modalBookInfoRef = document.querySelector('.modal-book-info');
 
 document.addEventListener('click', event => {
@@ -20,9 +26,33 @@ document.addEventListener('click', event => {
       modalBookInfoRef.innerHTML = markup;
     });
   }
+
+  // сохранение книги в localstorage (button)
+  if (event.target.matches('.add-to-shoping-list[data-book-id]')) {
+    const bookId = event.target.getAttribute('data-book-id');
+    const isAdded = loadStorageBooks().some(book => book._id === bookId);
+
+    getData(`/books/${bookId}`).then(data => {
+      // если нет - сохраняем
+      if (!isAdded) {
+        saveStorageBooks(data);
+      }
+      // если есть - удаляем
+      if (isAdded) {
+        removeElStorage(data);
+      }
+
+      // перерисовка в зависимости от актуального localStorage
+      modalBookInfoRef.innerHTML = createModalMarkup(data);
+    });
+  }
 });
 
-// все что выше - написал андрей (пытался использовать то, что уже было)
+/*
+
+  все что выше - написал андрей (пытался использовать то, что уже было)
+
+*/
 
 // все что ниже - код из modal-single-book.js (некоторые вещи дописал)
 
@@ -43,6 +73,21 @@ const refs = {
   closeModalWindow: document.querySelector('.close-modal-single-book'),
 };
 
+// закриття модалки кліком по бекдропу
+refs.backdropForModal.addEventListener('click', event => {
+  if (event.target.matches('.backdrop-modal')) {
+    onCloseWindow();
+  }
+});
+
+// закриття модалки натисканням на клавішу Escape
+document.addEventListener('keydown', evt => {
+  if (evt.key === 'Escape') {
+    onCloseWindow();
+  }
+});
+
+// закриття модалки по кліку на іконку close +
 refs.closeModalWindow.addEventListener('click', onCloseWindow);
 
 function onCloseWindow(event) {
