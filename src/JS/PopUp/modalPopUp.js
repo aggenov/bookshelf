@@ -3,6 +3,12 @@ import { createModalMarkup } from './Markup/ModalMarkup';
 import { loadStorage, saveStorage } from '../localStorage/localStorageAdd';
 
 const KEY = 'SAVED_BOOKS';
+import {
+  saveStorageBooks,
+  removeElStorage,
+  removeStorageBooks,
+  loadStorageBooks,
+} from '../localStorage/savingInStorage';
 
 const modalBookInfoRef = document.querySelector('.modal-book-info');
 
@@ -17,6 +23,9 @@ document.addEventListener('click', event => {
     // отправляем запрос за информацией о конкретной книге
     getData(`/books/${bookId}`).then(bookInfo => {
       // создаем разметку модалки из полученной от бекенда информации
+      // *****************добавлена функція додавання в локал сторидж потрібно перевісити на івент кнопки   ************************
+      // saveStorageBooks(bookInfo);
+      // *************************************
       const markup = createModalMarkup(bookInfo);
 
       // вставляем через innerHTML, чтоб удалить старую разметку, и добавить новую
@@ -31,10 +40,11 @@ document.addEventListener('click', event => {
     console.log(bookId);
 
     getData(`/books/${bookId}`).then(data => {
-      const prevState = loadStorage(KEY);
-      console.log(prevState);
-      const newState = prevState.push(data);
-      saveStorage(newState);
+      // const prevState = loadStorage(KEY);
+      // console.log(prevState);
+      // const newState = prevState.push(data);
+      // saveStorage(newState);
+      saveStorageBooks(data);
     });
   }
 });
