@@ -47,12 +47,12 @@
 
   &:hover {
     cursor: pointer;
-    color: var(--background-main-color);
+    color: var(--categories-active-color);
   }
 }
 
 .category-is-active {
   font-weight: 700;
-  color: var(--background-main-color);
+  color: var(--categories-active-color);
   text-transform: uppercase;
 }

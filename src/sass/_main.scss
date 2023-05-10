@@ -48,22 +48,25 @@ img {
 
 button {
     border-color: var(--background-main-color);
+    background-color: var(--background-light-color);
     cursor: pointer;
     border-radius: 40px;
     font-weight: 700;
-}
-button:hover {
-    background-color: var(--background-main-color);
-}
-button:focus {
+    &:hover,
+    &:focus{
+        border: 2px solid var(--background-main-color);
+        background-color: var(--background-main-color);
+        color: #fff;
+    }
+    &:focus{
     box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.15);
-    background-color: var(--background-light-color);
-    border-color: 2px solid var(--background-main-color);
-    color: var(--main-white-color);
+    }
+    &:disabled{
+    border-color: var(--scrollbar-color);
+    }
 }
-button:disabled {
-    border-color: var(--btn-default-color);
-}
+
+
 
 .backdrop {
     position: fixed;
@@ -80,4 +83,8 @@ button:disabled {
 
     overflow-y: scroll;
     z-index: 999;
+}
+
+body.modal-open {
+  overflow: hidden;
 }

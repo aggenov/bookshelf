@@ -27,6 +27,7 @@
     top: 18px;
     right: 18px;
     height: 28px;
+    margin-left: 14px;
     border-color: transparent;
     background-color: transparent;
     padding: 0;
@@ -40,33 +41,38 @@
 }
 .close-btn{
     stroke: var(--main-color);
+
+    &:hover{
+    stroke: var(--background-main-color);       
+    }
 }
-.close-btn:hover {
-    stroke: var(--background-main-color);
-}
+
 
 .mobile-nav-list {
     display: flex;
     height: 100%;
     position: absolute;
     flex-direction: column;
-    top: 25%;
+    top: 30%;
     left: 25%;
+    gap: 24px;
+    transition: -50%, -50%;
 }
+
 
 .header-nav-link-mob {
     font-weight: 500;
     line-height: 1.28;
     text-transform: uppercase;
-    color: var(--main-white-color);
+    color: #fff;
 }
 
 .header-nav-icon-mob {
     width: 20px;
     height: 20px;
     // position: absolute;
-    stroke: var(--main-white-color);
-    fill:var(--main-white-color);
+    stroke: #fff;
+    fill:#fff;
 }
 
 
@@ -78,6 +84,10 @@
     bottom: 0;
     width: 100%;
 }
+
+
+
+
 
 .mobile-btn-log {
     width: 118px;
@@ -100,8 +110,4 @@
 .mobile-arrow {
     position: absolute;
         bottom: 18px;
-}
-
-.theme-switch-mob {
-margin-right: 14px;
 }

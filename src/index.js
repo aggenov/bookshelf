@@ -9,3 +9,4 @@ import './JS/scroll-up';
 import './JS/colorTheme';
 import './JS/BestSellers/bestSellers';
 import './JS/loader';
+import './JS/modal-start';
