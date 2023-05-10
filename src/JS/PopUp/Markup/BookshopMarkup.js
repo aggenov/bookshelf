@@ -1,3 +1,5 @@
+import { loadStorage } from '../../localStorage/localStorageAdd';
+
 // сохраняю ссылки на иконки магазинов в одном объекте
 const images = {
   amazon: {
@@ -50,7 +52,7 @@ function ShopIcon(name, url, srcset1x, srcset2x, width) {
       <a href="${url}" target="_blank">
         <img
           src="${srcset1x}"
-          class="logo"
+          class="${logoTheme(name)}"
           srcset="${srcset1x} 1x, ${srcset2x} 2x"
           alt="${name}"
           width="${width}"
@@ -58,4 +60,14 @@ function ShopIcon(name, url, srcset1x, srcset2x, width) {
       </a>
     </li>
   `;
+}
+
+function logoTheme(name) {
+  const storageItem = localStorage.getItem('ui-theme');
+
+  if (storageItem == 'dark' && name == 'Amazon') {
+    return 'logo logo-dark-theme';
+  }
+
+  return 'logo';
 }
