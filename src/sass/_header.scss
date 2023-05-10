@@ -6,7 +6,7 @@
 
     height: 68px;
     min-width: 320px;
-    max-width: 375px;
+    // max-width: 375px;
 
     padding: 0 20px;
     margin: 0 auto;
@@ -17,7 +17,7 @@
     align-items: center;
 
     @media screen and (min-width: 768px) {
-            max-width: 768px;
+            // max-width: 768px;
             padding: 0 32px;
         }
     
@@ -62,8 +62,6 @@
     display: none;
     }
 }
-
-
 
 
 .header-nav-icon{
@@ -128,6 +126,7 @@
     }
 }
 
+
 .theme-block {
     display: flex;
     justify-content: center;
@@ -135,11 +134,9 @@
     gap: 24px;
 }
 
-
 .theme-switch{
     cursor: pointer;
 }
-
 
 input[type=checkbox] {
     height: 0;
@@ -194,23 +191,29 @@ label:active:after {
 
 
 .header-burger-icon {
-    width: 32px;
-    height: 32px;
+    // width: 32px;
+    // height: 32px;
     stroke: var(--main-color);
-}
-.header-burger-icon:hover {
+    &:hover{
     stroke: var(--background-main-color);
+    }
 }
+
 
 .users-button{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
+    @media screen and (max-width: 767px) {
+        display: none;
+        }
 }
 .btn-signup{
     width: 184px;
     height: 48px;
     border-radius: 18px;
+    border-color: transparent;
     background-color: var(--background-main-color);
     color: #ffffff;
     
@@ -220,6 +223,11 @@ label:active:after {
     align-items: center;
     margin-left: 24px;
     padding: 14px;
+
+    &:hover,
+    &:focus {
+        color: var(--background-active-color);
+    }
 }
 .btn-user {
     width: 185px;
@@ -241,6 +249,7 @@ label:active:after {
         stroke: #fff;
     }
 }
+
 .btn-logout {
     width: 184px;
     height: 48px;
@@ -257,33 +266,23 @@ label:active:after {
 }
 
 
-@media screen and (max-width: 767px) {
-btn-logout{
-    width: 184px;
-    height: 48px;
-    padding: 14px;
-    border-radius: 18px;
-    background-color: var(--background-main-color);
-    color: #fff;
+// @media screen and (max-width: 767px) {
+// btn-logout{
+//     width: 184px;
+//     height: 48px;
+//     padding: 14px;
+//     border-radius: 18px;
+//     background-color: var(--background-main-color);
+//     color: #fff;
 
-    display: flex;
-    justify-content: space-between;
+//     display: flex;
+//     justify-content: space-between;
 
-    &:hover,
-    &:focus {
-        color: var(--background-active-color);
-    }
-}
+//     &:hover,
+//     &:focus {
+//         color: var(--background-active-color);
+//     }
+// }
 
 
-}
- @media screen and (max-width: 768px) {
-     .container {
-         padding: 0 18px;
-     }
-
-     .users-button {
-         display: none;
-     }
-
- }
+// }
