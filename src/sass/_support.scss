@@ -4,7 +4,7 @@
   height: 352px;
   padding-top: 24px;
   padding-bottom: 20px;
-  background: radial-gradient(
+  background-image: radial-gradient(
     183.6% 183.01% at 59.76% -23.42%,
     var(--background-main-color) 18.03%,
     var(--main-white-color) 100%
@@ -15,7 +15,7 @@
 
 .support-block:hover,
 .support-block:focus {
-  background: linear-gradient(to bottom, blue 10, yellow);
+  background-image: linear-gradient(to bottom, blue 10, yellow);
 }
 
 .title-block {
@@ -83,4 +83,38 @@
   margin: 16px auto 0 auto;
   background-image: url('../images/svg/slider.svg');
   background-position: 50% 50%;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  
+  .support-block {
+    width: 335px;
+    height: 472px;
+  }
+
+    .slider {
+    width: 200px;
+    height: 292px;
+  }
+  
+  .slider-down {
+    margin: 32px auto 0 auto;
+  }
+}
+
+@media screen and (min-width: 1440px){
+  
+  .support-block {
+    width: 356px;
+    height: 490px;
+  }
+
+    .slider {
+    width: 200px;
+    height: 292px;
+  }
+  
+  .slider-down {
+    margin: 40px auto 0 auto;
+  }
 }

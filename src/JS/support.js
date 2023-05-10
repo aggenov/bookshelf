@@ -1,6 +1,6 @@
 import saveTheChildren from '../images/svg/01savethechildren.svg';
 import projectHope from '../images/svg/02projecthope.svg';
-import interMedCorps from '../images/svg/03intermedcorps.svg'
+import interMedCorps from '../images/svg/03intermedcorps.svg';
 import razom from '../images/svg/04razom.svg';
 import actionAgainstHunger from '../images/svg/05actionaghang.svg';
 import pritulaFoundation from '../images/svg/06sergpritula.svg';
@@ -62,16 +62,23 @@ renderFounds(FUNDS);
 let offset = 0;
 const sliderLine = document.querySelector('.slider-line');
 const buttonDown = document.querySelector('.slider-down');
-const buttonUp = document.querySelector('.slider-up');
 
 buttonDown.addEventListener('click', function () {
-  offset = offset - 52;
-  if (offset < -260) {
-    offset = 0;
-    // buttonDown.style.visibility = "hidden";
-    // buttonUp.style.visibility = "visible";
+  if (window.innerWidth <= 767) {
+    offset = offset - 52;
+    if (offset < -260) {
+      offset = 0;
+    }
+    sliderLine.style.top = offset + 'px';
   }
-  sliderLine.style.top = offset + 'px';
+  else {
+   
+    offset = offset - 52;
+    if (offset < -156) {
+      offset = 0;
+    }
+    sliderLine.style.top = offset + 'px';
+  }
 });
 
 function renderFounds(funds) {
