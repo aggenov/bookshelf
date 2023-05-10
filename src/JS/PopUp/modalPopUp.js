@@ -31,7 +31,6 @@ document.addEventListener('click', event => {
   if (event.target.matches('.add-to-shoping-list[data-book-id]')) {
     const bookId = event.target.getAttribute('data-book-id');
     const isAdded = loadStorageBooks().some(book => book._id === bookId);
-    console.log(isAdded);
 
     getData(`/books/${bookId}`).then(data => {
       // если нет - сохраняем
