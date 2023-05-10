@@ -1,36 +1,44 @@
-.header {
+.header-container {
     background: var(--main-white-color);
     border: 1.5px solid var(--main-color);
     border-radius: 0px 0px 8px 8px;
-    min-width: 320px;
-    margin-left: auto;
-    margin-right: auto;
-}
 
-a {
-    height: 28px;
-}
 
-.container {
     height: 68px;
     min-width: 320px;
-    padding: 0 32px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 375px;
+
+    padding: 0 20px;
+    margin: 0 auto;
+
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media screen and (min-width: 768px) {
+            max-width: 768px;
+            padding: 0 32px;
+        }
     
+    @media screen and (min-width: 1440px) {
+        max-width: 1440px;
+
+    }
+
 }
+
 
 .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
+    height: 64px;
 
-.header-nav-list li {
-    display: inline-block;
+    @media screen and (min-width: 768px) {
+        height: 72px;
+        justify-content: normal;
+    }
 }
 
 .header-logo-name {
@@ -39,36 +47,80 @@ a {
     align-items: center;
     gap: 8px;
     margin-right: 40px;
+    height: 28px;
+}
+.header-bookshelf {
+    fill: var(--main-color);
 }
 
-.header-home::after {
-    background-color: var(--background-active-color);
+.header-nav{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    @media screen and(max-width:767px) {
+    display: none;
+    }
+}
+
+
+
+
+
+
+.header-home {
+    height: 34px;
+    background-color: transparent;
+    border: transparent;
+    padding: 8px 16px;
+
     outline: none;
     border-radius: 36px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+
+    &:hover {
+        .header-nav-link {
+            color: var(--background-main-color);
+        }
+
+        .header-nav-icon {
+            fill: var(--background-main-color);
+        }
+    }
+
 }
+
+.active {
+    background: var(--background-active-color);
+}
+
 
 .header-burger {
     border-radius: 0;
     border-color: transparent;
     background-color: transparent;
-}
-.header-burger:hover {
+
+    &:hover {
     border-color: transparent;
     background-color: transparent;
-}
-// .theme-switch input[type="checkbox"] {
-//     // display: none;
-// }
+    }
 
-.theme-switch {
+    @media screen and (min-width: 768px){
+        display: none;
+    }
+}
+
+.theme-block {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 #switch {
-    margin-right: 14px;
-    padding-top: 15px;
     cursor: pointer;
 }
 
@@ -119,42 +171,10 @@ label:active:after {
     width: 38px;
 }
 
-.header-bookshelf {
-    fill: var(--main-color);
-}
 
 //--------------------------------------------------
-.header-home {
-    height: 34px;
-    background-color: transparent;
-    border: transparent;
-    padding: 8px 16px;
-}
 
 
-.active {
-    width: 72px;
-    height: 34px;
-    background: var(--background-active-color);
-    border-radius: 36px;
-    font-weight: 700;
-}
-
-.active-shop {
-    background: var(--background-active-color);
-    border-radius: 36px;
-    font-weight: 700;
-    padding: 8px 44px 8px 16px;
-}
-
-
-.header-shop:hover,
-.header-shop:focus {
-    background-color: var(--background-active-color);
-    outline: none;
-    border-radius: 36px;
-
-}
 
 
 .header-burger-icon {
@@ -166,14 +186,10 @@ label:active:after {
     stroke: var(--background-main-color);
 }
 
-@media screen and (max-width: 768px) {
-    .container {
-        padding: 0 18px;
-    }
+@media screen and (max-width: 767px) {
+   
     
-    .header-nav {
-        display: none;
-    }
+   
 
     .theme-switch {
         padding: 18px 0;
@@ -185,18 +201,10 @@ label:active:after {
 
 @media screen and (min-width: 768px) {
 
-    .nav {
-        height: 72px;
-        justify-content: normal;
-        align-items: center;
-    }
-
-
-
     .header-nav-icon {
         width: 20px;
         height: 20px;
-        position: absolute;
+        // position: absolute;
         color: var(--main-color);
     }
 
@@ -205,9 +213,10 @@ label:active:after {
         line-height: 1.28;
         text-transform: uppercase;
         color: var(--main-color);
-    }
-    .header-nav-link:hover {
+
+        &:hover{
         color: var(--background-main-color);
+        }
     }
 
     .header-burger {
@@ -227,9 +236,7 @@ label:active:after {
     background-position: center;
 }
 
-.header-logo {
-    margin-right: 76px;
-}
+
 
 }
 
