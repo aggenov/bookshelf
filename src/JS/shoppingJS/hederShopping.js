@@ -1,6 +1,6 @@
-const burgerMenu = document.querySelector('.modal-mobile-menu');
-const btnOpen = document.querySelector('.header-burger');
-const closeModalMenu = document.querySelector('.mobile-close-btn');
+const modalMenuShopping = document.querySelector('#modalShopping');
+const btnOpen = document.querySelector('#openShopping');
+const closeModalMenu = document.querySelector('#closeShopping');
 export const checkbox = document.querySelector('#switch');
 // export const checkbox = document.querySelector('#mob-switch');
 // console.dir(checkbox);
@@ -18,11 +18,11 @@ export const colorTheme = localStorage.getItem('ui-theme');
 })();
 
 btnOpen.addEventListener('click', () => {
-  burgerMenu.style.display = 'block';
+  modalMenuShopping.style.display = 'block';
 });
 
 closeModalMenu.addEventListener('click', () => {
-  burgerMenu.style.display = 'none';
+  modalMenuShopping.style.display = 'none';
 });
 
 checkbox.addEventListener('click', toggleCheckbox);

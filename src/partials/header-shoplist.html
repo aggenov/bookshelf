@@ -1,5 +1,5 @@
-<header class="header">
-  <div class="container">
+<header>
+  <div class="header-container">
     <div class="nav">
       <!-- Logo -->
       <a
@@ -27,7 +27,7 @@
           <span class="header-nav-link">Home</span>
         </a>
 
-        <a class="header-home active-shop" href="./shopping-list.html">
+        <a class="header-home active" href="./shopping-list.html">
           <span class="header-nav-link">Shopping list</span>
           <svg class="header-nav-icon">
             <use href="./images/svg/symbol-header.svg#icon-shop"></use>
@@ -37,11 +37,36 @@
     </div>
 
     <!-- The switch is there -->
-    <div class="theme-switch">
-      <input type="checkbox" id="switch" /><label for="switch">Toggle</label>
+    <div class="theme-block">
+      <!-- The switch -->
+      <input type="checkbox" class="theme-switch" id="switch" /><label
+        for="switch"
+        >Toggle</label
+      >
 
-      <!-- Burger menu -->
-      <button class="header-burger" type="button">
+      <!-- Button SIGN UP / USER-->
+      <div class="users-button">
+        <button type="button" class="btn-signup">
+          <span>Sign up</span>
+          <svg class="row-down" height="20px" width="20px">
+            <use href="./images/svg/icons.svg#row-right"></use>
+          </svg>
+        </button>
+        <button class="btn-user" type="button">
+          <svg class="header-logo" height="28px" width="28px">
+            <use
+              class="header-logo-icon"
+              href="./images/svg/symbol-header.svg#icon-Logo"
+            ></use>
+          </svg>
+          <span class="text-user">USER</span>
+          <svg class="row-down" height="26px" width="23px">
+            <use href="./images/svg/icons.svg#row-down"></use>
+          </svg>
+        </button>
+      </div>
+      <!-- Burger  button -->
+      <button id="openShopping" class="header-burger" type="button">
         <svg class="header-burger-icon" width="32px" height="32px">
           <use
             href="./images/svg/icons.svg#hamburger"
