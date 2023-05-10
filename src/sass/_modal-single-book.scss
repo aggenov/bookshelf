@@ -136,19 +136,6 @@ background-color: #fff;
   }
 }
 
-.add-to-shoping-list {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 499px;
-  height: 64px;
-  cursor: pointer;
-  text-transform: uppercase;
-  border-radius: 40px;
-  text-align: center;
-  background-color: #fff;
-}
-
 .title-style {
   font-weight: 700;
   font-size: 16px;
@@ -218,6 +205,7 @@ background-color: #fff;
   text-transform: uppercase;
   border-radius: 40px;
   text-align: center;
+  background-color: #fff;
 
   @media screen and (min-width: 768px){
   width: 499px;
