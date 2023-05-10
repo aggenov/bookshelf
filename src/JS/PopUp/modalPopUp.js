@@ -1,12 +1,9 @@
 import { getData } from '../BestSellers/request';
 import { createModalMarkup } from './Markup/ModalMarkup';
-import { loadStorage, saveStorage } from '../localStorage/localStorageAdd';
 
-const KEY = 'SAVED_BOOKS';
 import {
   saveStorageBooks,
   removeElStorage,
-  removeStorageBooks,
   loadStorageBooks,
 } from '../localStorage/savingInStorage';
 
@@ -23,9 +20,6 @@ document.addEventListener('click', event => {
     // отправляем запрос за информацией о конкретной книге
     getData(`/books/${bookId}`).then(bookInfo => {
       // создаем разметку модалки из полученной от бекенда информации
-      // *****************добавлена функція додавання в локал сторидж потрібно перевісити на івент кнопки   ************************
-      // saveStorageBooks(bookInfo);
-      // *************************************
       const markup = createModalMarkup(bookInfo);
 
       // вставляем через innerHTML, чтоб удалить старую разметку, и добавить новую
@@ -33,18 +27,24 @@ document.addEventListener('click', event => {
     });
   }
 
-  // сохранение книги в localstorage
+  // сохранение книги в localstorage (button)
   if (event.target.matches('.add-to-shoping-list[data-book-id]')) {
     const bookId = event.target.getAttribute('data-book-id');
-
-    console.log(bookId);
+    const isAdded = loadStorageBooks().some(book => book._id === bookId);
+    console.log(isAdded);
 
     getData(`/books/${bookId}`).then(data => {
-      // const prevState = loadStorage(KEY);
-      // console.log(prevState);
-      // const newState = prevState.push(data);
-      // saveStorage(newState);
-      saveStorageBooks(data);
+      // если нет - сохраняем
+      if (!isAdded) {
+        saveStorageBooks(data);
+      }
+      // если есть - удаляем
+      if (isAdded) {
+        removeElStorage(data);
+      }
+
+      // перерисовка в зависимости от актуального localStorage
+      modalBookInfoRef.innerHTML = createModalMarkup(data);
     });
   }
 });
@@ -76,14 +76,16 @@ const refs = {
 
 // закриття модалки кліком по бекдропу
 refs.backdropForModal.addEventListener('click', () => {
-  onCloseWindow();
+  // onCloseWindow();
 });
+
 // закриття модалки натисканням на клавішу Escape
 document.addEventListener('keydown', evt => {
   if (evt.key === 'Escape') {
     onCloseWindow();
   }
 });
+
 // закриття модалки по кліку на іконку close +
 refs.closeModalWindow.addEventListener('click', onCloseWindow);
 
