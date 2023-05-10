@@ -12,34 +12,34 @@ export function createBookMarkup({
   description,
   buy_links,
 }) {
-  return `<div class="shopping-list__item">
-    <li class="book-in-shopping-list" data-modal-id="${_id}">
+  return `<div class="shopping-list__container shopping-list__page">
+    <li class="book-in-shopping-list shopping-list__item" data-modal-id="${_id}">
       <button
         type="button"
         data-action="delete"
         value="remove"
         class="shopping-button shopping-list-button"
 
-        <svg class="erase" width="30px" height="30px">
+        <svg class="erase shopping-list__erace" width="30px" height="30px">
         <use href="./images/svg/icons.svg#erase"></use>
       </svg>
       
       </button>
 
-      <div class="придумайте сами">
+      
         <img 
           class="shopping-list__img" 
           src="${book_image}" 
           alt="${title}"
           loading="lazy"
         />
-      </div>
+      
 
       <p class="shopping-list__title">${title}</p>
       <p class="shopping-list__titleText">${list_name}</p>
       <p class="shopping-list__text">${description}</p>
       <p class="shopping-list__author">${author}</p>
-      <ul class="list-link-book-shop shopping-list-button">
+      <ul class="list-link-book-shop shopping-list-button shopping-list__shops-list">
       ${buy_links.map(createShopIcon).join('')}
       </ul>
     </li>
