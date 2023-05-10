@@ -38,13 +38,35 @@
 
     <!-- The switch is there -->
     <div class="theme-block">
-      <!-- The switch is there -->
-      <input type="checkbox" id="switch" /><label for="switch">Toggle</label>
+      <!-- The switch -->
+      <input type="checkbox" class="theme-switch" id="switch" /><label
+        for="switch"
+        >Toggle</label
+      >
+
       <!-- Button SIGN UP / USER-->
-      <button class="btn-sign-up" type="button">Sign up</button>
-      <button class="btn-sign-up" type="button">Sign up</button>
-      <!-- Burger menu -->
-      <button class="header-burger" type="button">
+      <div class="users-button">
+        <button type="button" class="btn-signup">
+          <span>Sign up</span>
+          <svg class="row-down" height="20px" width="20px">
+            <use href="./images/svg/icons.svg#row-right"></use>
+          </svg>
+        </button>
+        <button class="btn-user" type="button">
+          <svg class="header-logo" height="28px" width="28px">
+            <use
+              class="header-logo-icon"
+              href="./images/svg/symbol-header.svg#icon-Logo"
+            ></use>
+          </svg>
+          <span class="text-user">USER</span>
+          <svg class="row-down" height="26px" width="23px">
+            <use href="./images/svg/icons.svg#row-down"></use>
+          </svg>
+        </button>
+      </div>
+      <!-- Burger  button -->
+      <button id="openHome" class="header-burger" type="button">
         <svg class="header-burger-icon" width="32px" height="32px">
           <use
             href="./images/svg/icons.svg#hamburger"
