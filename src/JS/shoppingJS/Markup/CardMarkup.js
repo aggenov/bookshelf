@@ -1,3 +1,7 @@
+
+// import remove from './images/svg/icons.svg#erase';
+// ‘./images/svg/erase.svg’ - отдельно
+// ‘./images/svg/icons.svg#erase’ - в спрайте
 import { createShopIcon } from '../../PopUp/Markup/BookshopMarkup';
 
 export function createBookMarkup({
@@ -15,7 +19,8 @@ export function createBookMarkup({
         type="button"
         data-action="delete"
         value="remove"
-        class="shopping-button"
+        class="shopping-button shopping-list-button"
+        src="${remove}"
       >
       </button>
 
@@ -32,7 +37,7 @@ export function createBookMarkup({
       <p class="придумайте сами">${list_name}</p>
       <p class="придумайте сами">${description}</p>
       <p class="придумайте сами">${author}</p>
-      <ul class="list-link-book-shop">
+      <ul class="list-link-book-shop shopping-list-button">
       ${buy_links.map(createShopIcon).join('')}
       </ul>
     </li>
