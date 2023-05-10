@@ -75,8 +75,10 @@ const refs = {
 };
 
 // закриття модалки кліком по бекдропу
-refs.backdropForModal.addEventListener('click', () => {
-  // onCloseWindow();
+refs.backdropForModal.addEventListener('click', event => {
+  if (event.target.matches('.backdrop-modal')) {
+    onCloseWindow();
+  }
 });
 
 // закриття модалки натисканням на клавішу Escape
