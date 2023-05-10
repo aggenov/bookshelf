@@ -6,7 +6,7 @@
 
     height: 68px;
     min-width: 320px;
-    max-width: 375px;
+    // max-width: 375px;
 
     padding: 0 20px;
     margin: 0 auto;
@@ -17,7 +17,7 @@
     align-items: center;
 
     @media screen and (min-width: 768px) {
-            max-width: 768px;
+            // max-width: 768px;
             padding: 0 32px;
         }
     
@@ -64,9 +64,9 @@
 }
 
 
-
-
-
+.header-nav-icon{
+    fill: var(--main-color);
+}
 
 .header-home {
     height: 34px;
@@ -81,6 +81,13 @@
     justify-content: center;
     align-items: center;
     gap: 4px;
+    color: var(--main-color);
+
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.29;
+    letter-spacing: -0.04em;
 
     &:hover {
         .header-nav-link {
@@ -96,9 +103,10 @@
 
 .active {
     background: var(--background-active-color);
+    font-weight: 700;
+    color: #111;
     .header-nav-icon{
-        fill:var(--main-color);
-
+        fill:#111;
     }
 }
 
@@ -118,6 +126,7 @@
     }
 }
 
+
 .theme-block {
     display: flex;
     justify-content: center;
@@ -125,11 +134,9 @@
     gap: 24px;
 }
 
-
 .theme-switch{
     cursor: pointer;
 }
-
 
 input[type=checkbox] {
     height: 0;
@@ -184,90 +191,45 @@ label:active:after {
 
 
 .header-burger-icon {
-    width: 32px;
-    height: 32px;
+    // width: 32px;
+    // height: 32px;
     stroke: var(--main-color);
-}
-.header-burger-icon:hover {
+    &:hover{
     stroke: var(--background-main-color);
-}
-
-@media screen and (max-width: 767px) {
-   
-    
-   
-
-    .theme-switch {
-        padding: 18px 0;
-        gap: 14px;
-        
     }
-
-}
-
-@media screen and (min-width: 768px) {
-
-    .header-nav-icon {
-        width: 20px;
-        height: 20px;
-        // position: absolute;
-        fill: var(--main-color);
-    }
-
-    .header-nav-link {
-        font-weight: 500;
-        line-height: 1.28;
-        text-transform: uppercase;
-        color: var(--main-color);
-
-        &:hover{
-        color: var(--background-main-color);
-        }
-    }
-
-    .header-burger {
-        display: none;
-    }
-
-}
-
-@media screen and (min-width: 1200px) {
-    .slider-round {
-    display: inline-block;
-    width: 40px;
-    height: 24px;
-    background-image: url("../images/switcher-off@2x.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
 }
 
 
 .users-button{
-    @media screen and(max-width:767px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    @media screen and (max-width: 767px) {
         display: none;
-    }
+        }
 }
-
 .btn-signup{
     width: 184px;
     height: 48px;
-    padding: 14px;
     border-radius: 18px;
+    border-color: transparent;
     background-color: var(--background-main-color);
-    color: #fff;
-
+    color: #ffffff;
+    
+    // display: none;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    margin-left: 24px;
+    padding: 14px;
 
     &:hover,
     &:focus {
         color: var(--background-active-color);
     }
 }
-.btn-user{
-
+.btn-user {
     width: 185px;
     height: 45px;
     display: none;
@@ -279,7 +241,48 @@ label:active:after {
     background-color: var(--background-main-color);
     color: #fff;
 
+    .text-user {
+        color: #fff;
+    }
+
     .row-down {
-            stroke: #fff;
-        }
+        stroke: #fff;
+    }
 }
+
+.btn-logout {
+    width: 184px;
+    height: 48px;
+    border-radius: 18px;
+    background-color: var(--background-light-color);
+    color: var(--main-color);
+
+    display: none;
+    // display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 24px;
+    padding: 14px;
+}
+
+
+// @media screen and (max-width: 767px) {
+// btn-logout{
+//     width: 184px;
+//     height: 48px;
+//     padding: 14px;
+//     border-radius: 18px;
+//     background-color: var(--background-main-color);
+//     color: #fff;
+
+//     display: flex;
+//     justify-content: space-between;
+
+//     &:hover,
+//     &:focus {
+//         color: var(--background-active-color);
+//     }
+// }
+
+
+// }
