@@ -17,6 +17,15 @@ function init() {
 
 //слушатель checkbox для root: атрибут ui-theme === 'dark'
 checkbox.addEventListener('click', function () {
+  const allLogos = document.querySelectorAll('.logo');
+
+  /* эксперементальная версия, надеюсь это будет работать (андрей) */
+  allLogos.forEach(logo => {
+    if (logo.getAttribute('alt') == 'Amazon') {
+      logo.classList.toggle('logo-amazon');
+    }
+  });
+
   if (document.documentElement.hasAttribute('ui-theme')) {
     document.documentElement.removeAttribute('ui-theme');
   } else {
