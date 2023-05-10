@@ -143,3 +143,21 @@ img {
   top: 14px;
   right: 14px;
 }
+.shopping-list__titleText {
+  letter-spacing: .03em;
+  color: #b4afaf;
+  margin-bottom: 24px;
+  font-size: 12px;
+  line-height: 1.17;
+}
+shopping-list__author {
+  max-width: 98px;
+    color: #b4afaf;
+    font-size: 12px;
+    font-style: italic;
+    line-height: 1.17;
+}
+.shopping-list__text {
+  font-size: 14px;
+  line-height: 1.28;
+}

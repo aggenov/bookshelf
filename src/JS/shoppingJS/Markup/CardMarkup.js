@@ -12,8 +12,8 @@ export function createBookMarkup({
   description,
   buy_links,
 }) {
-  return `
-    <li class="book-in-shopping-list shopping-list__item" data-modal-id="${_id}">
+  return `<div class="shopping-list__item">
+    <li class="book-in-shopping-list" data-modal-id="${_id}">
       <button
         type="button"
         data-action="delete"
@@ -36,13 +36,14 @@ export function createBookMarkup({
       </div>
 
       <p class="shopping-list__title">${title}</p>
-      <p class="придумайте сами">${list_name}</p>
-      <p class="придумайте сами">${description}</p>
-      <p class="придумайте сами">${author}</p>
+      <p class="shopping-list__titleText">${list_name}</p>
+      <p class="shopping-list__text">${description}</p>
+      <p class="shopping-list__author">${author}</p>
       <ul class="list-link-book-shop shopping-list-button">
       ${buy_links.map(createShopIcon).join('')}
       </ul>
     </li>
+    </div>
     `;
 }
 
