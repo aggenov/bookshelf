@@ -76,14 +76,56 @@
     flex-direction: column;
     gap: 28px;
 
-    input{
-        width: 500px;
-        height: 40px;
-        border-radius: 20px;
+    
+}
+
+.form-field {
+    position: relative; 
+}
+.form-label {
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    transform: translateY(-50%);
+
+    transition: transform 250ms;
+
+    
+
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.33;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+
+    color: var(--main-color);
+}
+
+
+.form-input {
+    width: 100%;
+    height: 64px;
+    border-radius: 40px;
+
+    &:hover,
+    &:focus{
+        background-color: var(--scrollbar-color);
     }
-    button{
-        width: 500px;
-            height: 40px;
-            color: var(--main-color);
+   
+    &:focus+.form-label,
+    &:hover+.form-label,
+    &:not(:placeholder-shown)+.form-label{
+        color:var(--background-main-color),;
+        transform: translateY(-54px);
     }
+}
+
+
+
+
+.input-btn {
+    width: 500px;
+    height: 64px;
+    background-color: var(--main-color);
+    color: var(--main-white-color);
 }

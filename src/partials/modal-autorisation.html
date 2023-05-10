@@ -1,4 +1,4 @@
-<div class="backdrop is-hidden">
+<div class="backdrop">
   <div class="modal-autorisation">
     <button type="button" class="btn-close-modal">
       <svg class="position" width="28px" height="28px">
@@ -6,27 +6,38 @@
       </svg>
     </button>
     <form class="form-start">
-      <input
-        type="text"
-        class="input-name"
-        name="username"
-        autofocus
-        placeholder="NAME"
-      />
-      <input
-        type="email"
-        class="input-email"
-        name="email"
-        placeholder="EMAIL"
-      />
-      <input
-        type="password"
-        class="input-password"
-        name="PASSWORD"
-        placeholder="PASSWORD"
-      />
+      <div class="form-field">
+        <input
+          type="text"
+          id="name"
+          class="form-input"
+          name="NAME"
+          autofocus
+          placeholder=" "
+        />
+        <label for="name" class="form-label">NAME</label>
+      </div>
+      <div class="form-field">
+        <input
+          type="email"
+          id="email"
+          class="form-input"
+          name="EMAIL"
+          placeholder=" "
+        />
+        <label for="email" class="form-label">EMAIL</label>
+      </div>
+      <div class="form-field">
+        <input
+          type="password"
+          id="password"
+          class="form-input"
+          name="PASSWORD"
+          placeholder=" "
+        />
+        <label for="password" class="form-label">PASSWORD</label>
+      </div>
       <button type="submit" class="input-btn">SIGN UP</button>
     </form>
-    <div id="pagination" class="tui-pagination"></div>
   </div>
 </div>
