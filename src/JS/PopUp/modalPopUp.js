@@ -71,6 +71,7 @@ const refs = {
   backdropForModal: document.querySelector('.backdrop-modal'),
   bookDescription: document.querySelector('.modal'),
   closeModalWindow: document.querySelector('.close-modal-single-book'),
+  body: document.querySelector('body'),
 };
 
 // закриття модалки кліком по бекдропу
@@ -90,8 +91,9 @@ document.addEventListener('keydown', evt => {
 // закриття модалки по кліку на іконку close +
 refs.closeModalWindow.addEventListener('click', onCloseWindow);
 
-function onCloseWindow(event) {
+function onCloseWindow() {
   refs.backdropForModal.classList.add('is-hidden');
+  refs.body.classList.remove('modal-open');
 
   // при закрытии модалки удаляем содержимое
   modalBookInfoRef.innerHTML = '';
@@ -99,6 +101,7 @@ function onCloseWindow(event) {
 
 function openModalWindow() {
   refs.backdropForModal.classList.remove('is-hidden');
+  refs.body.classList.add('modal-open');
 }
 
 // // const allBooks = async () => {

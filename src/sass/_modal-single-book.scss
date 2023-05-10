@@ -5,7 +5,6 @@
 }
 
 .backdrop-modal {
-  // display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -19,27 +18,29 @@
 .modal {
   position: absolute;
   width: 335px;
-  max-width: 768px;
-  height: 806px;
-  padding: 40px 25px;
+  min-height: 750px;
+
+  padding: 40px 24px;
+
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
   background: var(--background-light-color);
+
   border: 2px solid var(--main-color);
+
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
-      0px 2px 1px rgba(0, 0, 0, 0.2);
+    0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 18px;
 
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
+    width: 579px;
+    min-height: 400px;
 
-      width: 579px;
-      height: 465px;
-      padding: 40px;
+    padding: 40px;
   }
-
 }
-
 
 .close-modal-single-book {
   position: absolute;
@@ -54,23 +55,33 @@
   width: 24px;
   height: 24px;
   cursor: pointer;
-border: none;
-background-color: var(--background-light-color);
-  
- 
+  border: none;
+  background: none;
+
+  // transition: all var(--duration-time) var(--timing-function);
+
   @media screen and (min-width: 768px) {
     top: 24px;
     right: 24px;
     width: 28px;
     height: 28px;
-    
+  }
+
+  &:hover,
+  &:focus {
+    background: none;
+    border: transparent;
+    box-shadow: none;
   }
 }
-.position{
+
+.position {
   fill: var(--main-color);
   stroke: var(--main-color);
 
-  &:hover{
+  transition: all var(--duration-time) var(--timing-function);
+
+  &:hover {
     fill: var(--background-main-color);
     stroke: var(--background-main-color);
     transform: scale(1.25);
@@ -85,20 +96,17 @@ background-color: var(--background-light-color);
 
 
 .book-title {
-
   display: block;
   width: 287px;
-  height: 458px;
- 
+
+  object-fit: contain;
+
   border-radius: 8px;
 
-  @media screen and (min-width: 768px){
-    display: inline-block;
+  @media screen and (min-width: 768px) {
     width: 192px;
-    height: 281px;
   }
 }
-
 
 .modal-book-container {
   display: block;
@@ -110,17 +118,15 @@ background-color: var(--background-light-color);
   }
 }
 
-
 .modal-image-wrapper {
   margin: 0;
   margin-bottom: 14px;
 
-
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
     margin-right: 24px;
-    margin-bottom: 40px;  
+    margin-bottom: 40px;
   }
-  
+
   @media screen and (min-width: 1440px) {
     width: 192px;
   }
@@ -129,11 +135,11 @@ background-color: var(--background-light-color);
 .content-box {
   margin-bottom: 40px;
 
- @media screen and (min-width: 768px) {
-  margin-bottom: 20px;
- }
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 768px) {
     width: 280px;
+    margin-bottom: 20px;
+  }
+  @media screen and (min-width: 1440px) {
   }
 }
 
@@ -144,12 +150,12 @@ background-color: var(--background-light-color);
   letter-spacing: 0.04rem;
   margin-bottom: 4px;
 
-  @media screen and (min-width: 768px){
-  display: block;
-  margin-bottom: 8px;
-  color: var(--main-color);
-  font-size: 24px;
-  line-height: 1.16;
+  @media screen and (min-width: 768px) {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--main-color);
+    font-size: 24px;
+    line-height: 1.16;
   }
 }
 
@@ -164,11 +170,10 @@ background-color: var(--background-light-color);
   letter-spacing: 0.04rem;
   color: #b4afaf;
 
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
     font-size: 14px;
     margin-bottom: 20px;
   }
- 
 }
 
 .book-description {
@@ -177,14 +182,12 @@ background-color: var(--background-light-color);
   font-size: 14px;
   line-height: 1.29;
   letter-spacing: 0.04rem;
-  
+
   color: var(--main-color);
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
     margin-bottom: 20px;
   }
- 
 }
-
 
 .list-link-book-shop {
   display: flex;
@@ -197,11 +200,11 @@ background-color: var(--background-light-color);
 }
 
 .add-to-shoping-list {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 279px;
-  height: 46px;
+  width: 100%;
+
+  padding-top: 20px;
+  padding-bottom: 20px;
+
   cursor: pointer;
   text-transform: uppercase;
   border-radius: 40px;
@@ -209,12 +212,28 @@ background-color: var(--background-light-color);
   background-color: var(--background-light-color);
   color: var(--main-color);
 
-  @media screen and (min-width: 768px){
-  width: 499px;
-  height: 64px;
-  }
+  color: var(--background-dar-color);
+  background-color: var(--background-light-color);
+  border: 2px solid var(--background-main-color);
+  transition: all var(--duration-time) var(--timing-function);
 }
 
-.modal-congratulations{
+.modal-congratulations {
+  display: block;
+
+  margin: 0 auto;
+  margin-top: 12px;
+  max-width: 238px;
+
+  font-size: 10px;
+  line-height: 1.2;
+
+  text-align: center;
+
   color: var(--text-color-categories);
+
+  @media screen and (min-width: 768px) {
+    font-size: 12px;
+    min-width: 324px;
+  }
 }
