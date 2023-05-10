@@ -66,7 +66,7 @@ function logoTheme(name) {
   const storageItem = localStorage.getItem('ui-theme');
 
   if (storageItem == 'dark' && name == 'Amazon') {
-    return 'logo logo-dark-theme';
+    return 'logo logo-amazon';
   }
 
   return 'logo';
