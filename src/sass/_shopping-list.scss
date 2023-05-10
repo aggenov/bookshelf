@@ -101,3 +101,30 @@ img {
 .book-in-shopping-list {
   position: relative;
 }
+// ************************************
+
+.shopping-list__item {
+  max-width: 335px;
+  border: 2px solid #4f2ee866;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  padding: 20px;
+  position: relative;
+}
+.shopping-list__img {
+  max-width: 98px;
+  max-height: 139px;
+  flex-shrink: 0;
+  margin-bottom: 4px;
+  margin-right: 20px;
+  height: auto;
+  display: block;
+}
+.shopping-list__title {
+  max-width: 144px;
+  margin-bottom: 4px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.12;
+    margin-left: 128px;
+}
