@@ -6,6 +6,11 @@ import { createBookMarkup } from './Markup/CardMarkup';
 
 const shoppingList = document.querySelector('.shopping-cart');
 const emptyList = document.querySelector('.empty-list');
+const supportBlock = document.querySelector('.support-block');
+
+if (supportBlock) {
+  supportBlock.classList.add('support-in-shopping-list');
+}
 
 function renderShoppingList(BooksArray) {
   if (BooksArray.length != 0) {
