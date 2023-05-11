@@ -25,7 +25,7 @@ export function createBookMarkup({
         data-action="delete"
         data-shopping-list-id="${_id}"
       >
-        <img src="${erase}" width="16" height="16"/>
+        <img class="erase" src="${erase}" width="16" height="16"/>
       </button>
       <div class="shopping-list-img-wrapper">
         <img 
