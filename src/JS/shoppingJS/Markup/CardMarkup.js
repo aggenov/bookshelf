@@ -22,10 +22,11 @@ export function createBookMarkup({
       <button
         class="shopping-list-remove-button"
         type="button"
+        aria-label="erase"
         data-action="delete"
         data-shopping-list-id="${_id}"
       >
-        <img src="${erase}" width="16" height="16"/>
+        <img class="erase" src="${erase}" alt="erase" width="16" height="16"/>
       </button>
       <div class="shopping-list-img-wrapper">
         <img 
