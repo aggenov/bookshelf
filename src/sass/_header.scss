@@ -270,23 +270,11 @@ input:checked+.switch-label:after {
 }
 
 
-// @media screen and (max-width: 767px) {
-// btn-logout{
-//     width: 184px;
-//     height: 48px;
-//     padding: 14px;
-//     border-radius: 18px;
-//     background-color: var(--background-main-color);
-//     color: #fff;
-
-//     display: flex;
-//     justify-content: space-between;
-
-//     &:hover,
-//     &:focus {
-//         color: var(--background-active-color);
-//     }
-// }
-
-
-// }
+.dropbtn {
+    background-color: var(--background-main-color);
+    color: #fff;
+    padding: 16px;
+    font-size: 16px;
+    border-color: transparent;
+    cursor: pointer;
+}

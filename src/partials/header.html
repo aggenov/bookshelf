@@ -50,24 +50,28 @@
             <use href="./images/svg/icons.svg#row-right"></use>
           </svg>
         </button>
-        <button type="button" class="btn-user">
-          <svg class="header-logo" height="28px" width="28px">
-            <use
-              class="header-logo-icon"
-              href="./images/svg/symbol-header.svg#icon-Logo"
-            ></use>
-          </svg>
-          <span class="text-user">USER</span>
-          <svg class="row-down" height="26px" width="23px">
-            <use href="./images/svg/icons.svg#row-down"></use>
-          </svg>
-        </button>
-        <button type="button" class="btn-logout">
-          <span>Log out</span>
-          <svg width="20px" height="20px">
-            <use href="./images/svg/icons.svg#row-right"></use>
-          </svg>
-        </button>
+        <div class="dropdown">
+          <button type="button" class="btn-user dropbtn">
+            <svg class="header-logo" height="28px" width="28px">
+              <use
+                class="header-logo-icon"
+                href="./images/svg/icons.svg#user"
+              ></use>
+            </svg>
+            <span class="text-user">USER</span>
+            <svg class="row-down" height="26px" width="23px">
+              <use href="./images/svg/icons.svg#row-down"></use>
+            </svg>
+          </button>
+          <div id="myDropdown" class="dropdown-content">
+            <button type="button" class="btn-logout">
+              <span>Log out</span>
+              <svg width="20px" height="20px">
+                <use href="./images/svg/icons.svg#row-right"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
       <!-- Burger  button -->
       <button id="openHome" class="header-burger" type="button">
