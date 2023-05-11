@@ -183,3 +183,29 @@
         line-height: 1.33;
         }
 }
+
+.sign-links{
+    display: flex;
+    gap: 20px;
+    margin-top: 14px;
+    font-size: 14px;
+    line-height: 1.29;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    @media screen and(min-width:768px) {
+        margin-top: 20px;
+        font-size: 18px;
+        line-height: 1.33;
+    }
+}
+
+.sign-up{
+    color: var(--background-main-color);
+    text-decoration-line: underline;
+    // cursor: pointer;
+}
+.sign-in{
+    color: var(--text-color-categories);
+    // cursor: pointer;
+}

@@ -49,11 +49,17 @@
     margin-right: 40px;
     height: 28px;
 }
-.header-logo-icon{
+
+.header-logo{
+    
+    height:28px; 
+    width:28px;
     fill:#fff;
     stroke: #fff;
 }
 .header-bookshelf {
+    height: 14px;
+    width: 77px;
     fill: var(--main-color);
 }
 
@@ -70,6 +76,8 @@
 
 .header-nav-icon{
     fill: var(--main-color);
+    height:20px;
+     width:20px;
 }
 
 .header-home {
@@ -195,8 +203,8 @@ input:checked+.switch-label:after {
 
 
 .header-burger-icon {
-    // width: 32px;
-    // height: 32px;
+    width: 32px;
+    height: 32px;
     stroke: var(--main-color);
     &:hover{
     stroke: var(--background-main-color);
@@ -233,6 +241,10 @@ input:checked+.switch-label:after {
         color: var(--background-active-color);
     }
 }
+.row-right{
+    height:20px;
+     width:20px;
+}
 .btn-user {
     width: 185px;
     height: 45px;
@@ -245,13 +257,27 @@ input:checked+.switch-label:after {
     background-color: var(--background-main-color);
     color: #fff;
 
+    &:hover+.text-user,
+    &:focus+.text-user {
+        color: var(--background-active-color);
+    }
+
+    &:focus+.row-down,
+    &:focus+.row-down {
+        stroke: var(--background-active-color);
+    }
+
     .text-user {
         color: #fff;
     }
 
     .row-down {
         stroke: #fff;
+        height:26px;
+         width:23px;
     }
+
+    
 }
 
 .btn-logout {
@@ -270,11 +296,18 @@ input:checked+.switch-label:after {
 }
 
 
-.dropbtn {
-    background-color: var(--background-main-color);
-    color: #fff;
-    padding: 16px;
-    font-size: 16px;
-    border-color: transparent;
-    cursor: pointer;
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+.show {
+    display: block;
 }
