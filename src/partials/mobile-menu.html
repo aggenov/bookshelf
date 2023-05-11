@@ -1,18 +1,30 @@
 <div id="modalHome" class="modal-mobile-menu">
   <div class="nav-modal">
-    <a href="./index.html">
-      <svg class="header-logo" height="28px" width="109px">
+    <a
+      class="header-logo-name"
+      href="./index.html"
+      aria-label="See Most Popular Books"
+    >
+      <svg class="header-logo" height="28px" width="28px">
         <use
           class="header-logo-icon"
-          href="./images/svg/symbol-header.svg#icon-logo"
+          href="./images/svg/symbol-header.svg#icon-Logo"
+        ></use>
+      </svg>
+      <svg height="14px" width="77px">
+        <use
+          class="header-bookshelf"
+          href="./images/svg/symbol-header.svg#icon-Bookshelf"
         ></use>
       </svg>
     </a>
 
     <div class="theme-block">
       <!-- The switch -->
-      <input type="checkbox" class="theme-switch" id="mob-switch" />
-      <label class="switch-label" for="switch">Toggle</label>
+      <input type="checkbox" class="theme-switch" id="mob-switch" /><label
+        for="mob-switch"
+        >Toggle</label
+      >
     </div>
   </div>
   <button id="closeHome" type="button" class="mobile-close-btn">
@@ -21,7 +33,7 @@
     </svg>
   </button>
   <div class="mobile-nav-list">
-    <a class="header-home active" href="./index.html">
+    <a class="header-home active-mob" href="./index.html">
       <span class="header-nav-link-mob">Home</span>
     </a>
     <a class="header-home" href="./shopping-list.html">
