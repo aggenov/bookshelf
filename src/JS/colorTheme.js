@@ -1,6 +1,8 @@
 import { colorTheme, checkbox } from './header';
 // console.log('colorTheme: ', colorTheme);
 
+export const colorTheme = localStorage.getItem('ui-theme');
+
 //устанавливаем для root: атрибут ui-theme === 'dark'
 document.addEventListener('DOMContentLoaded', () => {
   init();

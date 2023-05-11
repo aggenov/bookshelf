@@ -1,3 +1,5 @@
+import { colorTheme } from './colorTheme';
+
 const modalMenuShopping = document.querySelector('#modalShopping');
 const btnOpen = document.querySelector('#openShopping');
 const closeModalMenu = document.querySelector('#closeShopping');
