@@ -225,6 +225,8 @@
   margin-left: auto;
   margin-bottom: 40px;
 
+  border: 2px solid var(--background-main-color);
+
   transition: all var(--duration-time) var(--timing-function);
 
   &:hover {
