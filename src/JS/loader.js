@@ -8,5 +8,6 @@ const loader = document.querySelector('.mask');
 
 // на картинку я (андрей) передаю эту функцию как колбек в атрибут onload
 export function disableLoader() {
-  loader.style.display = 'none';
+  loader.style.opacity = 0;
+  loader.style.zIndex = -555;
 }
