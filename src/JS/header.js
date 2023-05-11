@@ -17,7 +17,6 @@ const btnSignup = document.querySelector('.btn-signup');
   if (getUserData()) {
     headerNav.classList.remove('is-hidden');
     userBar.style.display = 'flex';
-    // btnOpen.style.display = 'flex';
     btnSignup.style.display = 'none';
   } else {
     headerNav.classList.add('is-hidden');
@@ -57,14 +56,18 @@ function toggleCheckbox() {
   }
 }
 
+//   UserBar
+//--------------------------------------------------
+// устанавливает имя полбзователя на кнопку
 userBar.children[0].children[1].textContent = parsData.userName;
-userBar.addEventListener('click', myFunction);
 
+userBar.addEventListener('click', myFunction);
+// открывает выпадающее меню из кнопки
 function myFunction() {
   document.getElementById('myDropdown').classList.toggle('show');
 }
 
-// Закройте выпадающее меню, если пользователь щелкает за его пределами
+// Закрывает выпадающее меню, если пользователь щелкает за его пределами
 window.onclick = function (event) {
   if (!event.target.matches('.dropbtn')) {
     var dropdowns = document.getElementsByClassName('dropdown-content');
