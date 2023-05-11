@@ -1,4 +1,5 @@
 import { createShopIcon } from '../../PopUp/Markup/BookshopMarkup';
+import erase from '../../../images/trash-03.png';
 
 export function createBookMarkup({
   _id,
@@ -9,30 +10,40 @@ export function createBookMarkup({
   description,
   buy_links,
 }) {
+  if (!description) {
+    description = `
+    There is no description for this book yet. 
+    Try visiting any of the stores provided below.
+    `;
+  }
+
   return `
-    <li class="book-in-shopping-list shopping-list__item" data-modal-id="${_id}">
+    <li class="shopping-list-item">
       <button
+        class="shopping-list-remove-button"
         type="button"
         data-action="delete"
-        value="remove"
-        class="shopping-button"
+        data-shopping-list-id="${_id}"
       >
+        <img src="${erase}" width="16" height="16"/>
       </button>
-
-      <div class="придумайте сами">
+      <div class="shopping-list-img-wrapper">
         <img 
-          class="shopping-list__img" 
+          class="shopping-list-img" 
           src="${book_image}" 
           alt="${title}"
           loading="lazy"
         />
       </div>
 
-      <p class="shopping-list__title">${title}</p>
-      <p class="придумайте сами">${list_name}</p>
-      <p class="придумайте сами">${description}</p>
-      <p class="придумайте сами">${author}</p>
-      <ul class="list-link-book-shop">
+      <div class="shopping-list-content-wrapper">
+        <p class="shopping-list-item-title">${title}</p>
+        <p class="shopping-list-item-category">${list_name}</p>
+        <p class="shopping-list-item-description">${description}</p>
+        <p class="shopping-list-item-author">${author}</p>
+      </div>
+      
+      <ul class="list-link-book-shop shopping-list-book-shops">
       ${buy_links.map(createShopIcon).join('')}
       </ul>
     </li>
