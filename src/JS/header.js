@@ -1,5 +1,6 @@
 import { getUserData } from './autorisation';
 import { clearUserData } from './autorisation';
+import { parsData } from './autorisation';
 
 const burgerMenu = document.querySelector('.modal-mobile-menu');
 const btnOpen = document.querySelector('.header-burger');
@@ -55,6 +56,9 @@ function toggleCheckbox() {
     localStorage.setItem('ui-theme', 'dark');
   }
 }
+
+userBar.children[0].children[1].textContent = parsData.userName;
+userBar.addEventListener('click', myFunction);
 
 function myFunction() {
   document.getElementById('myDropdown').classList.toggle('show');
