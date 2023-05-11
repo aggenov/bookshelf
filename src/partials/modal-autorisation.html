@@ -1,4 +1,4 @@
-<div class="backdrop">
+<div class="backdrop-start is-hidden">
   <div class="modal-autorisation">
     <button type="button" class="btn-close-modal">
       <svg class="position" width="28px" height="28px">
@@ -9,35 +9,33 @@
       <div class="form-field">
         <input
           type="text"
-          id="name"
           class="form-input"
-          name="NAME"
+          name="name"
           autofocus
           placeholder=" "
         />
         <label for="name" class="form-label">NAME</label>
       </div>
       <div class="form-field">
-        <input
-          type="email"
-          id="email"
-          class="form-input"
-          name="EMAIL"
-          placeholder=" "
-        />
+        <input type="email" class="form-input" name="email" placeholder=" " />
         <label for="email" class="form-label">EMAIL</label>
+        <svg class="label-icon">
+          <use href="./images/svg/icons.svg#email"></use>
+        </svg>
       </div>
       <div class="form-field">
         <input
           type="password"
-          id="password"
           class="form-input"
-          name="PASSWORD"
+          name="password"
           placeholder=" "
         />
         <label for="password" class="form-label">PASSWORD</label>
+        <svg class="label-icon">
+          <use href="./images/svg/icons.svg#lock"></use>
+        </svg>
       </div>
-      <button type="submit" class="input-btn">SIGN UP</button>
+      <button type="submit" name="button" class="input-btn">SIGN UP</button>
     </form>
   </div>
 </div>

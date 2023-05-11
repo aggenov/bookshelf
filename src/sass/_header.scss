@@ -49,6 +49,10 @@
     margin-right: 40px;
     height: 28px;
 }
+.header-logo-icon{
+    fill:#fff;
+    stroke: #fff;
+}
 .header-bookshelf {
     fill: var(--main-color);
 }
@@ -232,8 +236,8 @@ input:checked+.switch-label:after {
 .btn-user {
     width: 185px;
     height: 45px;
-    display: none;
-    // display: flex;
+    // display: none;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 8px;
