@@ -41,6 +41,10 @@
     }
 }
 
+.header-logo {
+    height:28px; 
+    width:28px;
+}
 .header-logo-name {
     display: flex;
     justify-content: center;
@@ -51,6 +55,8 @@
 }
 .header-bookshelf {
     fill: var(--main-color);
+    height:14px;
+     width:77px;
 }
 
 .header-nav{
@@ -65,6 +71,8 @@
 
 
 .header-nav-icon{
+    height:20px; 
+    width:20px;
     fill: var(--main-color);
 }
 
@@ -90,12 +98,15 @@
     letter-spacing: -0.04em;
 
     &:hover {
-        .header-nav-link {
+        .header-nav-link,
+        .header-nav-link-mob {
             color: var(--background-main-color);
         }
 
-        .header-nav-icon {
+        .header-nav-icon,
+        .header-nav-icon-mob {
             fill: var(--background-main-color);
+            stroke: var(--background-main-color);
         }
     }
 
@@ -125,6 +136,7 @@
         display: none;
     }
 }
+
 
 
 .theme-block {
@@ -191,8 +203,8 @@ label:active:after {
 
 
 .header-burger-icon {
-    // width: 32px;
-    // height: 32px;
+    width: 32px;
+    height: 32px;
     stroke: var(--main-color);
     &:hover{
     stroke: var(--background-main-color);
@@ -229,6 +241,11 @@ label:active:after {
         color: var(--background-active-color);
     }
 }
+
+.row-right{
+    height:20px; 
+    width:20px;
+}
 .btn-user {
     width: 185px;
     height: 45px;
@@ -246,6 +263,8 @@ label:active:after {
     }
 
     .row-down {
+        height:26px; 
+        width:23px;
         stroke: #fff;
     }
 }
@@ -266,23 +285,4 @@ label:active:after {
 }
 
 
-// @media screen and (max-width: 767px) {
-// btn-logout{
-//     width: 184px;
-//     height: 48px;
-//     padding: 14px;
-//     border-radius: 18px;
-//     background-color: var(--background-main-color);
-//     color: #fff;
 
-//     display: flex;
-//     justify-content: space-between;
-
-//     &:hover,
-//     &:focus {
-//         color: var(--background-active-color);
-//     }
-// }
-
-
-// }

@@ -1,10 +1,20 @@
 <div id="modalShopping" class="modal-mobile-menu">
   <div class="nav-modal">
-    <a href="./index.html">
-      <svg class="header-logo" height="28px" width="109px">
+    <a
+      class="header-logo-name"
+      href="./index.html"
+      aria-label="See Most Popular Books"
+    >
+      <svg class="header-logo">
         <use
           class="header-logo-icon"
-          href="./images/svg/symbol-header.svg#icon-logo"
+          href="./images/svg/symbol-header.svg#icon-Logo"
+        ></use>
+      </svg>
+      <svg class="header-bookshelf">
+        <use
+          class="header-bookshelf"
+          href="./images/svg/symbol-header.svg#icon-Bookshelf"
         ></use>
       </svg>
     </a>
@@ -18,7 +28,7 @@
     </div>
   </div>
   <button id="closeShopping" type="button" class="mobile-close-btn">
-    <svg class="close-btn" width="28px" height="28px">
+    <svg class="close-btn">
       <use href="./images/svg/symbol-icon.svg#icon-x-close"></use>
     </svg>
   </button>
@@ -26,11 +36,13 @@
     <a class="header-home" href="./index.html">
       <span class="header-nav-link-mob">Home</span>
     </a>
-    <a class="header-home active" href="./shopping-list.html">
+    <div class="mob-nav-shoppiglist">
+      <a class="header-home" href="./shopping-list.html">
       <span class="header-nav-link-mob">Shopping list</span>
       <svg class="header-nav-icon-mob">
         <use href="./images/svg/symbol-header.svg#icon-shop"></use>
       </svg>
+    </div>
     </a>
   </div>
 
@@ -38,7 +50,7 @@
 
   <button class="mobile-btn-log">
     <span class="mobile-text">Log out</span>
-    <svg class="mobile-arrow" width="14" height="10">
+    <svg class="row-right">
       <use href="./images/svg/symbol-icon.svg#icon"></use>
     </svg>
   </button>
