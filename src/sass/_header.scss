@@ -53,7 +53,17 @@
     margin-right: 40px;
     height: 28px;
 }
+
+.header-logo{
+    
+    height:28px; 
+    width:28px;
+    fill:#fff;
+    stroke: #fff;
+}
 .header-bookshelf {
+    height: 14px;
+    width: 77px;
     fill: var(--main-color);
     height:14px;
      width:77px;
@@ -65,7 +75,7 @@
     gap: 8px;
 
     @media screen and(max-width:767px) {
-    display: none;
+    display: none !important;
     }
 }
 
@@ -74,6 +84,8 @@
     height:20px; 
     width:20px;
     fill: var(--main-color);
+    height:20px;
+     width:20px;
 }
 
 .header-home {
@@ -156,7 +168,7 @@ input[type=checkbox] {
     visibility: hidden;
 }
 
-label {
+.switch-label {
     cursor: pointer;
     text-indent: -9999px;
     width: 40px;
@@ -170,7 +182,7 @@ label {
     box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-label:after {
+.switch-label:after {
     content: '';
     position: absolute;
     top: 1px;
@@ -187,12 +199,12 @@ input:checked+label {
     box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-input:checked+label:after {
+input:checked+.switch-label:after {
     left: calc(100% - 1px);
     transform: translateX(-100%);
 }
 
-label:active:after {
+.switch-label:active:after {
     width: 38px;
 }
 
@@ -221,6 +233,7 @@ label:active:after {
         display: none;
         }
 }
+
 .btn-signup{
     width: 184px;
     height: 48px;
@@ -241,22 +254,32 @@ label:active:after {
         color: var(--background-active-color);
     }
 }
-
 .row-right{
-    height:20px; 
-    width:20px;
+    height:20px;
+     width:20px;
 }
+
 .btn-user {
     width: 185px;
     height: 45px;
-    display: none;
-    // display: flex;
+    // display: none;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 8px;
     padding: 8px 12px;
     background-color: var(--background-main-color);
     color: #fff;
+
+    &:hover+.text-user,
+    &:focus+.text-user {
+        color: var(--background-active-color);
+    }
+
+    &:focus+.row-down,
+    &:focus+.row-down {
+        stroke: var(--background-active-color);
+    }
 
     .text-user {
         color: #fff;
@@ -266,23 +289,47 @@ label:active:after {
         height:26px; 
         width:23px;
         stroke: #fff;
+        height:26px;
+         width:23px;
     }
+
+    
 }
 
 .btn-logout {
     width: 184px;
     height: 48px;
+    border: 1.5px solid var(--main-color);
     border-radius: 18px;
     background-color: var(--background-light-color);
     color: var(--main-color);
 
-    display: none;
-    // display: flex;
+    // display: none;
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-left: 24px;
     padding: 14px;
+
+    &:hover,
+    &:focus{
+        color: var(--background-active-color);
+    }
 }
 
 
-
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top:45px;
+    background-color: none;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 18px;
+}
+.show {
+    display: block;
+}
