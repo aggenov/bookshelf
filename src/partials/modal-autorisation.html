@@ -6,24 +6,40 @@
       </svg>
     </button>
     <form class="form-start">
-      <input
-        type="text"
-        class="input-name"
-        name="username"
-        placeholder="NAME"
-      />
-      <input
-        type="email"
-        class="input-email"
-        name="email"
-        placeholder="EMAIL"
-      />
-      <input
-        type="password"
-        class="input-password"
-        name="PASSWORD"
-        placeholder="PASSWORD"
-      />
+      <div class="form-field">
+        <input
+          type="text"
+          class="form-input input-name"
+          name="name"
+          placeholder="NAME"
+        />
+        <label for="name" class="form-label"></label>
+      </div>
+      <div class="form-field">
+        <input
+          type="email"
+          class="form-input input-email"
+          name="email"
+          placeholder="EMAIL"
+        />
+        <label for="email" class="form-label"></label>
+        <svg class="label-icon">
+          <use href="./images/svg/icons.svg#email"></use>
+        </svg>
+      </div>
+      <div class="form-field">
+        <input
+          type="password"
+          class="form-input input-password"
+          name="password"
+          placeholder="PASSWORD"
+        />
+        <label for="password" class="form-label"></label>
+        <svg class="label-icon">
+          <use href="./images/svg/icons.svg#lock"></use>
+        </svg>
+      </div>
+
       <button type="submit" class="input-btn">SIGN UP</button>
     </form>
     <div class="sign-links">

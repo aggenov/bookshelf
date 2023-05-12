@@ -1,11 +1,34 @@
+import { getUserData } from './autorisation';
+import { clearUserData } from './autorisation';
+import { parsData } from './autorisation';
+
 const burgerMenu = document.querySelector('.modal-mobile-menu');
 const btnOpen = document.querySelector('.header-burger');
 const closeModalMenu = document.querySelector('.mobile-close-btn');
-export const checkbox = document.querySelector('#switch');
-// export const checkbox = document.querySelector('#mob-switch');
-// console.dir(checkbox);
+
+export const checkbox = document.querySelector('.theme-switch');
 export const colorTheme = localStorage.getItem('ui-theme');
 
+const headerNav = document.querySelector('.header-nav');
+const userBar = document.querySelector('.dropdown');
+const btnSignup = document.querySelector('.btn-signup');
+const btnLogout = document.querySelector('.btn-logout');
+
+//__________________________ isNonAutorised User  --  Hidden nav menu
+(function checkUserKey() {
+  if (getUserData()) {
+    headerNav.classList.remove('is-hidden');
+    userBar.style.display = 'flex';
+    btnSignup.style.display = 'none';
+  } else {
+    headerNav.classList.add('is-hidden');
+    userBar.style.display = 'none';
+    btnOpen.style.display = 'none';
+    btnSignup.style.display = 'flex';
+  }
+})();
+
+//
 (function checkColorTheme() {
   if (!colorTheme) {
     localStorage.setItem('ui-theme', 'light');
@@ -35,11 +58,18 @@ function toggleCheckbox() {
   }
 }
 
+//   UserBar
+//--------------------------------------------------
+// устанавливает имя полбзователя на кнопку
+userBar.children[0].children[1].textContent = parsData.userName;
+
+userBar.addEventListener('click', myFunction);
+// открывает выпадающее меню из кнопки
 function myFunction() {
   document.getElementById('myDropdown').classList.toggle('show');
 }
 
-// Закройте выпадающее меню, если пользователь щелкает за его пределами
+// Закрывает выпадающее меню, если пользователь щелкает за его пределами
 window.onclick = function (event) {
   if (!event.target.matches('.dropbtn')) {
     var dropdowns = document.getElementsByClassName('dropdown-content');

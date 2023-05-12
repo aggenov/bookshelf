@@ -90,8 +90,8 @@
     border-radius: 36px;
 
     display: flex;
-    justify-content: center;
-    align-items: center;
+    // justify-content: center;
+    // align-items: center;
     gap: 4px;
     color: var(--main-color);
 
@@ -221,6 +221,7 @@ input:checked+.switch-label:after {
         display: none;
         }
 }
+
 .btn-signup{
     width: 184px;
     height: 48px;
@@ -245,6 +246,7 @@ input:checked+.switch-label:after {
     height:20px;
      width:20px;
 }
+
 .btn-user {
     width: 185px;
     height: 45px;
@@ -283,16 +285,21 @@ input:checked+.switch-label:after {
 .btn-logout {
     width: 184px;
     height: 48px;
+    border: 1.5px solid var(--main-color);
     border-radius: 18px;
     background-color: var(--background-light-color);
     color: var(--main-color);
 
-    display: none;
-    // display: flex;
+    // display: none;
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-left: 24px;
     padding: 14px;
+
+    &:hover,
+    &:focus{
+        color: var(--background-active-color);
+    }
 }
 
 
@@ -303,10 +310,11 @@ input:checked+.switch-label:after {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
+    top:45px;
+    background-color: none;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
+    border-radius: 18px;
 }
 .show {
     display: block;

@@ -1,3 +1,4 @@
+import './JS/autorisation';
 import './JS/home-by-category';
 import './JS/header';
 import './JS/PopUp/modalPopUp';

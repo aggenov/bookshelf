@@ -41,24 +41,28 @@
 
       <!-- Button SIGN UP / USER-->
       <div class="users-button">
-        <button type="button" class="btn-user">
-          <svg class="header-logo">
-            <use
+        <div class="dropdown">
+          <button type="button" class="btn-user dropbtn">
+            <img
+              src="./images/user.png"
               class="header-logo-icon"
-              href="./images/svg/icons.svg#user"
-            ></use>
-          </svg>
-          <span class="text-user">USER</span>
-          <svg class="row-down">
-            <use href="./images/svg/icons.svg#row-down"></use>
-          </svg>
-        </button>
-        <button type="button" class="btn-logout is-hidden">
-          <span>Log out</span>
-          <svg class="row-right">
-            <use href="./images/svg/icons.svg#row-right"></use>
-          </svg>
-        </button>
+              alt="User Logo"
+              width="37px"
+            />
+            <span class="text-user">USER</span>
+            <svg class="row-down">
+              <use href="./images/svg/icons.svg#row-down"></use>
+            </svg>
+          </button>
+          <div id="myDropdown" class="dropdown-content">
+            <button type="button" class="btn-logout">
+              <span>Log out</span>
+              <svg class="row-right">
+                <use href="./images/svg/icons.svg#row-right"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
       <!-- Burger  button -->
       <button
@@ -67,12 +71,8 @@
         type="button"
         aria-label="murger-menu-toggle"
       >
-        <svg class="header-burger-icon" width="32px" height="32px">
-          <use
-            href="./images/svg/icons.svg#hamburger"
-            width="32px"
-            height="32px"
-          ></use>
+        <svg class="header-burger-icon">
+          <use href="./images/svg/icons.svg#hamburger"></use>
         </svg>
       </button>
     </div>

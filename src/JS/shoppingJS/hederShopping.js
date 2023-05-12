@@ -1,10 +1,15 @@
-const modalMenuShopping = document.querySelector('#modalShopping');
-const btnOpen = document.querySelector('#openShopping');
-const closeModalMenu = document.querySelector('#closeShopping');
-export const checkbox = document.querySelector('#switch');
-// export const checkbox = document.querySelector('#mob-switch');
-// console.dir(checkbox);
+import { colorTheme } from '../colorTheme';
+
+const burgerMenu = document.querySelector('.modal-mobile-menu');
+const btnOpen = document.querySelector('.header-burger');
+const closeModalMenu = document.querySelector('.mobile-close-btn');
+
+export const checkbox = document.querySelector('.theme-switch');
 export const colorTheme = localStorage.getItem('ui-theme');
+
+const headerNav = document.querySelector('.header-nav');
+const userBar = document.querySelector('.dropdown');
+const btnLogout = document.querySelector('.btn-logout');
 
 (function checkColorTheme() {
   if (!colorTheme) {
