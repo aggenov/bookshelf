@@ -5,7 +5,7 @@
         <use href="./images/svg/icons.svg#x-close"></use>
       </svg>
     </button>
-    <form class="form-start">
+    <form class="form-start form-sign-up">
       <div class="form-field">
         <input
           type="text"
@@ -42,9 +42,47 @@
 
       <button type="submit" class="input-btn">SIGN UP</button>
     </form>
+
+    <form class="form-start form-sign-in display-none">
+      <div class="form-field">
+        <input
+          type="text"
+          class="form-input input-name"
+          name="name"
+          placeholder="NAME"
+        />
+        <label for="name" class="form-label"></label>
+      </div>
+      <div class="form-field">
+        <input
+          type="email"
+          class="form-input input-email"
+          name="email"
+          placeholder="EMAIL"
+        />
+        <label for="email" class="form-label"></label>
+        <svg class="label-icon">
+          <use href="./images/svg/icons.svg#email"></use>
+        </svg>
+      </div>
+      <div class="form-field">
+        <input
+          type="password"
+          class="form-input input-password"
+          name="password"
+          placeholder="PASSWORD"
+        />
+        <label for="password" class="form-label"></label>
+        <svg class="label-icon">
+          <use href="./images/svg/icons.svg#lock"></use>
+        </svg>
+      </div>
+
+      <button type="submit" class="input-btn">SIGN IN</button>
+    </form>
     <div class="sign-links">
-      <span class="sign-up">SIGN UP</span>
-      <span class="sign-in">SIGN IN</span>
+      <span class="sign-up sign-is-active" data-sign-up>SIGN UP</span>
+      <span class="sign-in" data-sign-in>SIGN IN</span>
     </div>
   </div>
 </div>
