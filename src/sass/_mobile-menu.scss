@@ -7,6 +7,7 @@
     z-index: 100;
     background: linear-gradient(to bottom, var(--background-main-color), var(--main-white-color));
     display: none;
+
 }
 
 
@@ -40,6 +41,8 @@
     background-color: transparent;
 }
 .close-btn{
+    width:28px; 
+    height:28px;
     stroke: var(--main-color);
 
     &:hover{
@@ -50,18 +53,30 @@
 
 .mobile-nav-list {
     // display: flex;
-    height: 100%;
-    margin-top: 184px;
-    margin-left: 129px;
+    // height: 100%;
+    // margin-top: 184px;
+    // margin-left: 129px;
     
-}
-    // position: absolute;
-    // flex-direction: column;
-    // top: 30%;
-    // left: 50%;
-    // gap: 24px;
-    // transform: translateX(-50%);
 // }
+    position: absolute;
+    flex-direction: column;
+    top: 30%;
+    left: 50%;
+    gap: 24px;
+    transform: translateX(-50%);
+}
+.mob-nav-shoppiglist{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:4px;
+
+
+    height: 34px;
+    // width: 150px;
+    border-radius: 34px;
+    background: var(--background-active-color);
+}
 
 .active-mob {
     width: 72px;
@@ -103,22 +118,34 @@
 .mobile-btn-log {
     width: 118px;
     height: 48px;
-    background: var(--main-white-color);
+    background: #fff;
     border: 1.5px solid var(--main-color);
     border-radius: 18px;
     position: absolute;
     bottom: 20px;
     left: 20px;
-}
-
-.mobile-text {
-    font-weight: 500;
-    line-height: 1.28;
     color: var(--main-color);
-    margin-right: 4px;
+    background-color: #fff;
+
+    padding: 8px 16px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+
+    .mobile-text {
+        font-weight: 500;
+        line-height: 1.28;
+        color:#111;
+    }
+
+    &:hover+ .mobile-text,
+    &:focus+ .mobile-text {
+    color: var(--background-active-color);
+    }
+
 }
 
-.mobile-arrow {
-    position: absolute;
-        bottom: 18px;
-}
+
+

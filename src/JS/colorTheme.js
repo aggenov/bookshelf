@@ -1,4 +1,5 @@
-import { colorTheme, checkbox } from './header';
+import { colorTheme, checkbox, checkboxMob } from './header';
+// console.log('colorTheme: ', colorTheme);
 
 //устанавливаем для root: атрибут ui-theme === 'dark'
 document.addEventListener('DOMContentLoaded', () => {
@@ -15,7 +16,10 @@ function init() {
 }
 
 //слушатель checkbox для root: атрибут ui-theme === 'dark'
-checkbox.addEventListener('click', function () {
+checkbox.addEventListener('click', checkRoot);
+checkboxMob.addEventListener('click', checkRoot);
+
+function checkRoot(evt) {
   const allLogos = document.querySelectorAll('.logo');
 
   /* эксперементальная версия, надеюсь это будет работать (андрей) */
@@ -30,4 +34,4 @@ checkbox.addEventListener('click', function () {
   } else {
     document.documentElement.setAttribute('ui-theme', 'dark');
   }
-});
+}
