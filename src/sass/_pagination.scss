@@ -1,0 +1,98 @@
+@import url('../images/pagi-icons/pagi-icons.svg');
+.tui-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 40px 0 !important;
+}
+
+.tui-page-btn {
+    font-family: 'DM Sans' !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    font-size: 18px !important;
+    line-height: 22px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    min-width: 44px;
+    min-height: 44px;
+    background-color: transparent;
+    border: 1px solid #000000;
+    color: #000000;
+    border: 1px solid #111111 !important;
+    border-radius: 50%;
+    // &:hover {
+    //     background-color: #000000 !important;
+    //     color: #FFFFFF !important;
+    // }
+}
+
+.no-hover {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    min-width: 44px;
+    min-height: 44px;
+    background-color: transparent;
+    border: 1px solid #000000;
+    border-radius: 50%; 
+    background-color: #000000;
+    &:hover {
+        background: #000000 !important;
+    }
+}
+
+
+.tui-is-selected {
+        background-color: black !important;
+}
+
+.tui-next, .tui-last {
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    // background: url('../images/pagi-icons/pagi-icons.svg#icon-pagi-next') !important;
+    background-color: #EAC645 !important;
+    color: #FFFFFF !important;
+}
+
+.is-hidden {
+    display: none;
+}
+// .tui-next::before {
+//     content: '' !important;
+//     // position: relative !important;
+//     position: absolute !important;
+//     top: 50%;
+//     left: 0;
+//     height: 20px;
+//     // width: 100%;
+//     z-index: 9999;
+//     fill: #000000;
+//     background-image: url('../images/pagi-icons/pagi-icons.svg#icon-pagi-next')  center !important;
+// }
+
+// .tui-page-btn:not(.no-hover):hover{
+    
+// }
+
+
+// .more{
+//     color: #FFFFFF !important;
+// }
+
+// .tui-is-disabled .tui-ico-next{
+//     color: #FFFFFF;
+// }
+
+// .tui-first:disabled, .tui-first[disabled] {
+//     border: 1px solid #999999 important;
+//     background-color: #cccccc important;
+//     color: #666666 important;
+// }
+
+// .disabledMoveButton {
+//     background: url('../images/pagi-icons/pagi-icons.svg#icon-pagi-next') no-repeat;
+// }
