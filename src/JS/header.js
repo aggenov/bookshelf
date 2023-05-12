@@ -5,12 +5,14 @@ import { parsData } from './autorisation';
 const burgerMenu = document.querySelector('.modal-mobile-menu');
 const btnOpen = document.querySelector('.header-burger');
 const closeModalMenu = document.querySelector('.mobile-close-btn');
-export const checkbox = document.querySelector('#switch');
+
+export const checkbox = document.querySelector('.theme-switch');
 export const colorTheme = localStorage.getItem('ui-theme');
 
 const headerNav = document.querySelector('.header-nav');
 const userBar = document.querySelector('.dropdown');
 const btnSignup = document.querySelector('.btn-signup');
+const btnLogout = document.querySelector('.btn-logout');
 
 //__________________________ isNonAutorised User  --  Hidden nav menu
 (function checkUserKey() {
