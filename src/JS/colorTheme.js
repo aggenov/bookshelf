@@ -17,7 +17,7 @@ function init() {
 
 //слушатель checkbox для root: атрибут ui-theme === 'dark'
 checkbox.addEventListener('click', checkRoot);
-checkboxMob.addEventListener('click', checkRoot);
+// checkboxMob.addEventListener('click', checkRoot);
 
 function checkRoot(evt) {
   const allLogos = document.querySelectorAll('.logo');
