@@ -18,39 +18,6 @@ function renderBooksPage(books, page) {
 
   booksList.innerHTML = '';
 
-    showBooks.forEach((book) =>{
-        const bookMarkup = createBookMarkup(book);
-        booksList.insertAdjacentHTML('beforeend', bookMarkup);
-    })
-
-};
-
-const options = {
-    totalItems: booksFromLS.length,
-    itemsPerPage: window.innerWidth < 480 ? 4 : 3,
-    visiblePages: 3,
-    page: currentPage,
-    centerAlign: true,
-    pageLinkClassName: 'tui-page-link',
-    currentPageClassName: 'tui-page-current',
-    usageStatistics: false,
-    template: {
-        page: '<a href="#" class="tui-page-btn">{{page}}</a>',
-        currentPage: '<strong class="tui-page-btn tui-is-selected">{{page}}</strong>',
-        moveButton:
-          '<a href="#" class="tui-page-btn tui-{{type}}">' +
-          '<span class="tui-ico-{{type}}">{{type}}</span>' +
-          '</a>',
-        disabledMoveButton:
-          '<span class="tui-is-disabled tui-{{type}}-is-disabled no-hover">">' +
-          '<span class="tui-ico-{{type}}">{{type}}</span>' +
-          '</span>',
-        moreButton:
-          '<a href="#" class="tui-page-btn more tui-{{type}}-is-ellip">' +
-          '<span class="tui-ico-ellip more">...</span>' +
-          '</a>',
-    },
-}
   showBooks.forEach(book => {
     const bookMarkup = createBookMarkup(book);
     booksList.insertAdjacentHTML('beforeend', bookMarkup);
@@ -84,7 +51,6 @@ const options = {
       '</a>',
   },
 };
-
 
 const pagination = new Pagination(containerPagi, options);
 
