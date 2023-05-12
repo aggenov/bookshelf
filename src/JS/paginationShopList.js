@@ -22,11 +22,12 @@ function renderBooksPage(books, page){
         const bookMarkup = createBookMarkup(book);
         booksList.insertAdjacentHTML('beforeend', bookMarkup);
     })
+
 };
 
 const options = {
     totalItems: booksFromLS.length,
-    itemsPerPage: itemsPerPage,
+    itemsPerPage: window.innerWidth < 480 ? 4 : 3,
     visiblePages: 3,
     page: currentPage,
     centerAlign: true,
@@ -41,12 +42,12 @@ const options = {
           '<span class="tui-ico-{{type}}">{{type}}</span>' +
           '</a>',
         disabledMoveButton:
-          '<span class="tui-page-btn tui-is-disabled tui-{{type}}">' +
+          '<span class="tui-is-disabled tui-{{type}}-is-disabled no-hover">">' +
           '<span class="tui-ico-{{type}}">{{type}}</span>' +
           '</span>',
         moreButton:
-          '<a href="#" class="tui-page-btn tui-{{type}}-is-ellip">' +
-          '<span class="tui-ico-ellip">...</span>' +
+          '<a href="#" class="tui-page-btn more tui-{{type}}-is-ellip">' +
+          '<span class="tui-ico-ellip more">...</span>' +
           '</a>',
     },
 }
